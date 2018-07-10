@@ -216,11 +216,10 @@ function initMaps(){
 }
 
 
-
-ymaps.ready(initMaps);
+ymaps !== undefined && ymaps.ready(initMaps);
 
 $(window).on('resize load',function(){
-   ymaps.ready(mapContactsResponsive);
+    ymaps !== undefined && ymaps.ready(mapContactsResponsive);
 });
 
 
