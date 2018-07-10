@@ -2216,10 +2216,27 @@ input[type="search"] {
     position: relative;
     margin-bottom: 30px; }
 
+.c-tabs .c-tabs__nav {
+  text-align: left;
+  margin-bottom: 20px; }
+  .c-tabs .c-tabs__nav > ul {
+    padding: 0;
+    margin: 0 -10px;
+    display: block; }
+    .c-tabs .c-tabs__nav > ul > li {
+      display: inline-block;
+      padding: 0 10px; }
+  .c-tabs .c-tabs__nav .c-tabs__link {
+    border-bottom: 1px dashed;
+    text-decoration: none;
+    line-height: 1; }
+    .c-tabs .c-tabs__nav .c-tabs__link.is-active, .c-tabs .c-tabs__nav .c-tabs__link:hover {
+      border-color: transparent; }
+
 .c-header {
   position: relative;
   background: #039c91 url("../images/bg-header.jpg") left top no-repeat fixed;
-  border-bottom: 10px solid #212121;
+  border-bottom: 5px solid #212121;
   padding: 80px 0 50px 0;
   margin-bottom: 100px; }
   @media only screen and (max-width: 1023px) {
@@ -2239,22 +2256,18 @@ input[type="search"] {
   .c-header [class^="c-header__object-"] {
     line-height: 0;
     font-size: 0;
-    position: absolute;
-    -webkit-transition: all linear 1s 0s;
-    -moz-transition: all linear 1s 0s;
-    -o-transition: all linear 1s 0s;
-    transition: all linear 1s 0s; }
+    position: absolute; }
     @media only screen and (max-width: 1023px) {
       .c-header [class^="c-header__object-"] {
         display: none; } }
   .c-header .c-header__object-4 {
-    top: 30px;
+    top: 75px;
     left: 50%;
-    margin-left: 150px; }
+    margin-left: 200px; }
   .c-header .c-header__object-5 {
-    bottom: -60px;
+    bottom: 0;
     left: 50%;
-    margin-left: 180px; }
+    margin-left: 140px; }
     @media only screen and (max-width: 1679px) {
       .c-header .c-header__object-5 {
         left: auto;
@@ -2265,7 +2278,7 @@ input[type="search"] {
         right: -50px; } }
   .c-header .c-header__object-6 {
     right: -120px;
-    top: 50px; }
+    top: 100px; }
     @media only screen and (max-width: 1679px) {
       .c-header .c-header__object-6 {
         display: none; } }
@@ -2358,7 +2371,7 @@ input[type="search"] {
   top: 0;
   width: 100%;
   background: #039c91;
-  border-bottom: 10px solid #212121;
+  border-bottom: 5px solid #212121;
   opacity: 0;
   -webkit-transform: translate(0, -100%);
      -moz-transform: translate(0, -100%);
@@ -2497,6 +2510,30 @@ input[type="search"] {
   .c-logo img {
     max-width: 100%; }
 
+.c-map-container {
+  height: 500px;
+  position: relative;
+  width: 100%;
+  line-height: 0; }
+  .c-map-container .c-map-container__map {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
+.c-table-wrapper.is-active {
+  overflow: auto;
+  width: 100%; }
+
+[data-paralax] {
+  opacity: 0;
+  will-change: transform;
+  -webkit-transition: all ease 1s 0s;
+  -moz-transition: all ease 1s 0s;
+  -o-transition: all ease 1s 0s;
+  transition: all ease 1s 0s; }
+  [data-paralax].is-active {
+    opacity: 1; }
+
 .c-section {
   position: relative;
   display: block; }
@@ -2577,11 +2614,7 @@ input[type="search"] {
     .c-section-about .c-section-about__figure .c-section-about__figure__object-1,
     .c-section-about .c-section-about__figure .c-section-about__figure__object-2 {
       line-height: 0;
-      position: absolute;
-      -webkit-transition: all linear 1s 0s;
-      -moz-transition: all linear 1s 0s;
-      -o-transition: all linear 1s 0s;
-      transition: all linear 1s 0s; }
+      position: absolute; }
       @media only screen and (max-width: 1239px) {
         .c-section-about .c-section-about__figure .c-section-about__figure__object-1,
         .c-section-about .c-section-about__figure .c-section-about__figure__object-2 {
@@ -2784,11 +2817,7 @@ input[type="search"] {
     position: absolute;
     left: 50%;
     line-height: 0;
-    font-size: 0;
-    -webkit-transition: all linear 1s 0s;
-    -moz-transition: all linear 1s 0s;
-    -o-transition: all linear 1s 0s;
-    transition: all linear 1s 0s; }
+    font-size: 0; }
   .c-section-features .c-section-features__object-1 {
     top: -40px;
     margin-left: 300px; }
@@ -2809,8 +2838,8 @@ input[type="search"] {
       display: block;
       line-height: 0;
       position: absolute;
-      left: -30px;
-      top: 50px; }
+      left: -80px;
+      top: -10px; }
       @media only screen and (max-width: 1023px) {
         .c-section-features .c-section-features__text:before {
           display: none; } }
