@@ -170,15 +170,14 @@ $('.js-img-background').each(function(){
 });
 
 var map,
-    mapX = 59.886243,
-    mapY = 30.386539;
+    mapCoord = [55.633682,37.438950];
 
 function mapContactsResponsive() {
     if($('#js-map').length > 0){
-        //map.setCenter([mapX, mapY]);
+        //map.setCenter(mapCoord);
         //map.panTo( 55.753321, 37.857773);
-        map.setZoom(16);
-        map.setCenter([mapX, mapY]);
+        map.setZoom(17);
+        map.setCenter(mapCoord);
 
         if(breakpoints.current === 'xs'){
             map.behaviors.disable('drag');
@@ -194,16 +193,16 @@ function initMaps(){
 
     if($(document).find('#js-map').length > 0){
         map = new ymaps.Map("js-map", {
-            center: [mapX, mapY],
-            zoom: 16,
+            center: mapCoord,
+            zoom: 17,
             scroll:false,
             duration: 1000,
-            controls:['zoomControl']
+            controls:[]
         });
 
         map.geoObjects
-            .add(new ymaps.Placemark([mapX, mapY], {
-                    iconCaption: 'PROMIX',
+            .add(new ymaps.Placemark(mapCoord, {
+                    iconCaption: '',
                     balloonContent: ''
                 },{
                     preset: 'islands#redDotIcon'
@@ -228,10 +227,12 @@ $(window).on('resize load',function(){
 $(window).on('xs sm md', function () {
     $('#js-menu-main').insertBefore($('#js-header-fixed'));
     $('#js-menu-main').css('top', $('#js-header-fixed').height());
+    $('.js-main-footer .c-footer__copyright').appendTo($('.js-main-footer .c-footer__inner'));
 });
 
 $(window).on('lg container xxl', function () {
     $('#js-menu-main').appendTo($('#js-header-fixed .c-header-fixed__nav'));
+    $('.js-main-footer .c-footer__copyright').appendTo($('.js-main-footer .c-footer__center'));
     $('#js-menu-main').css('top', '');
 });
 
@@ -377,4 +378,15 @@ $('[data-paralax]').each(function () {
         }
         item.css('transform', 'translateY(' + parseFloat(transformY) + 'px) translateX(' + parseFloat(transformX) + 'px)');
     });
+});
+
+$('#section-feedback').on('change',function (event) {
+    var self = $(this);
+    function mapResize(){
+        ymaps !== undefined && map.container.fitToViewport();
+    }
+    self.find('.js-textarea').on('autosize:resized', function(){
+        mapResize();
+    });
+    mapResize();
 });

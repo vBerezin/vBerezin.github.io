@@ -536,47 +536,44 @@
           </section>
           <section class="c-section c-section-feedback" id="section-feedback">
             <div class="l-container">
-              <div class="c-section__head">
-                <h2 class="h1 c-section__title">Где купить?</h2>
-              </div>
-              <div class="c-section-feedback__phone"><a href="tel:+78007756702">8 (800) 775 67 02</a>
-                <p>по будням с 8:00 до 18:00 по МСК</p>
-              </div>
               <div class="c-section-feedback__form">
                 <div class="c-form c-form-feedback">
+                  <div class="c-form__head">
+                    <div class="c-form__title">Где купить?</div>
+                  </div>
                   <form>
                     <div class="c-form__body">
                       <div class="l-row">
-                        <div class="l-col-sm-6">
+                        <div class="l-col-xs-6 l-col-sm-12">
                           <div class="c-form__field">
-                            <input type="text" placeholder="Имя">
+                            <input type="text" placeholder="Имя" name="user-name">
                           </div>
                         </div>
-                        <div class="l-col-sm-6">
+                        <div class="l-col-xs-6 l-col-sm-12">
                           <div class="c-form__field">
-                            <input class="js-input-phone" type="text" placeholder="Телефон*" required>
+                            <input class="js-input-phone" type="text" placeholder="Телефон*" required name="user-phone">
                           </div>
                         </div>
-                        <div class="l-col-sm-6">
+                        <div class="l-col-xs-6 l-col-sm-12">
                           <div class="c-form__field">
-                            <input type="text" placeholder="Адресс">
+                            <input type="text" placeholder="Адрес" name="user-address">
                           </div>
                         </div>
-                        <div class="l-col-sm-6">
+                        <div class="l-col-xs-6 l-col-sm-12">
                           <div class="c-form__field">
-                            <input type="text" placeholder="E-mail">
+                            <input type="email" placeholder="E-mail" name="user-mail">
                           </div>
                         </div>
                         <div class="l-col-sm-12">
                           <div class="c-form__field">
-                            <textarea class="js-textarea" placeholder="Коммментарий"></textarea>
+                            <textarea class="js-textarea" placeholder="Комментарий" name="user-text"></textarea>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="c-form__footer">
                       <div class="l-row">
-                        <div class="l-col-xs-6 l-col-sm-6 l-col-sm-offset-6">
+                        <div class="l-col-xs-6 l-col-sm-12 l-col-xs-offset-3 l-col-sm-offset-0">
                           <div class="c-form__submit">
                             <button class="c-btn c-btn--block" type="submit">Заказать</button>
                           </div>
@@ -586,11 +583,9 @@
                   </form>
                 </div>
               </div>
-            </div>
-          </section>
-          <section class="c-section c-section-map" id="section-map">
-            <div class="c-map-container">
-              <div class="c-map-container__map" id="js-map"></div>
+              <div class="c-section-feedback__map">
+                <div class="c-section-feedback__map__map" id="js-map"></div>
+              </div>
             </div>
           </section>
         </div>
@@ -598,8 +593,28 @@
       <div class="l-main-footer">
         <footer class="c-footer js-main-footer" id="footer">
           <div class="l-container">
-            <div class="c-footer__copyright">
-              <p>© 2018 Promix. Все права защищены законодательством Российской Федерации.</p>
+            <div class="c-footer__inner">
+              <div class="c-footer__center">
+                <div class="c-footer__logo">
+                  <div class="c-logo"><a href="/"><img src="assets/images/logo-2.png" alt="PROMIX"></a></div>
+                  <div class="c-logo"><a href="http://www.ekodar.ru" rel="nofollow" target="_blank"><img src="assets/images/logo-ekodar.png" alt="Ekodar"></a></div>
+                </div>
+                <div class="c-footer__copyright">
+                  <p>© 2018 Promix. Все права защищены</p>
+                </div>
+              </div>
+              <div class="c-footer__left">
+                <div class="c-footer__info">
+                  <p><a href="tel:+74952325262">+7 (495) 232-52-62</a></p>
+                  <p>с 08:00 до 19:00; сб, вс — выходной</p>
+                </div>
+              </div>
+              <div class="c-footer__right">
+                <div class="c-footer__info">
+                  <p><b>Адрес:&nbsp;</b>108811, Москва, Киевское шоссе, Бизнес-парк «Румянцево», стр. 1А, 1 офисный подъезд, 4 этаж</p>
+                  <p><b>E-mail:&nbsp;</b><a href="mailto:ekodar@ekodar.ru">ekodar@ekodar.ru</a></p>
+                </div>
+              </div>
             </div>
           </div>
         </footer>
