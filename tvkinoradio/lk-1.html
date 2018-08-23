@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Корзина</title>
+    <title>Личный кабинет</title>
     <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="assets/images/favicon.ico">
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -30,7 +30,7 @@
       }
     </script>
   </head>
-  <body class="is-page is-page-cart">
+  <body class="is-page">
     <div class="l-main-wrapper"><!--[if lt IE 9]>
 <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
 <![endif]-->
@@ -300,288 +300,262 @@
                     <div class="c-breadcrumbs__item"><a class="c-breadcrumbs__item__link" href="/">Главная &ndash;</a></div>
                   </li>
                   <li>
-                    <div class="c-breadcrumbs__item"><span>Корзина</span></div>
+                    <div class="c-breadcrumbs__item"><a class="c-breadcrumbs__item__link" href="/">Личный кабинет &ndash;</a></div>
+                  </li>
+                  <li>
+                    <div class="c-breadcrumbs__item"><span>Заказы</span></div>
                   </li>
                 </ul>
               </nav>
             </div>
-            <div class="l-cart-breadcrumbs">
-              <div class="c-cart-nav"><a class="c-cart-nav__item is-completed" href="#">Корзина<span class="c-cart-nav__item__icon">1</span></a>
-                <div class="c-cart-nav__sep">-</div><a class="c-cart-nav__item is-completed" href="#">Контакты<span class="c-cart-nav__item__icon">2</span></a>
-                <div class="c-cart-nav__sep">-</div><a class="c-cart-nav__item is-active" href="#">Доставка<span class="c-cart-nav__item__icon">3</span></a>
-                <div class="c-cart-nav__sep">-</div><a class="c-cart-nav__item" href="#">Оплата<span class="c-cart-nav__item__icon">4</span></a>
+            <div class="l-user-header">
+              <div class="l-page-title">
+                <h1>Здраствуйте, _UserName_!</h1>
               </div>
+              <div class="l-user-header__quit"><a class="c-link-action" href="#">Выйти</a></div>
             </div>
           </div>
         </div>
         <div class="l-page-body">
           <div class="l-container">
-            <div class="l-page-content">
-              <div class="l-cart">
-                <div class="l-cart__main">
-                  <div class="l-cart__form">
-                    <div class="l-cart__form__body">
-                      <div class="c-form c-form--panel c-form-cart">
-                        <div class="c-form__head">
-                          <div class="c-form__title">Выберите способ получения</div>
-                        </div>
-                        <div class="c-form__body">
-                          <div class="c-form__field">
-                            <div class="c-radio-group">
-                              <label class="c-radio-group__label">
-                                <input type="radio" name="delivery-type" value="1" checked><span>курьер</span>
-                              </label>
-                              <label class="c-radio-group__label">
-                                <input type="radio" name="delivery-type" value="2"><span>транспортная компания</span>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="c-form-cart__alert">
-                            <div class="c-alert-static">
-                              <svg class="c-icon c-icon-svg c-icon-svg-alert">
-                                <use xlink:href="assets/images/icons.svg#alert"></use>
-                              </svg><span>Курьерская доставка осуществляется по Москве и Московской области</span>
-                            </div>
-                          </div>
-                          <div class="l-row">
-                            <div class="l-col-md-6">
-                              <div class="c-form__field">
-                                <select class="js-select">
-                                  <option>Новый адрес</option>
-                                  <option>Новый адрес</option>
-                                  <option>Новый адрес</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="l-row">
-                            <div class="l-col-md-6">
-                              <div class="c-form__field">
-                                <select class="js-select js-placeholder" data-placeholder="Город*">
-                                  <option>Москва</option>
-                                  <option>Москва</option>
-                                  <option>Москва</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="l-col-md-6">
-                              <div class="c-form__field">
-                                <input class="js-placeholder" type="text" placeholder="Улица*" required>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="l-row">
-                            <div class="l-col-md-3">
-                              <div class="c-form__field">
-                                <input class="js-placeholder" type="text" placeholder="Дом*" required>
-                              </div>
-                            </div>
-                            <div class="l-col-md-3">
-                              <div class="c-form__field">
-                                <input class="js-placeholder" type="text" placeholder="Корпус*" required>
-                              </div>
-                            </div>
-                            <div class="l-col-md-3">
-                              <div class="c-form__field">
-                                <input class="js-placeholder" type="text" placeholder="Строение">
-                              </div>
-                            </div>
-                            <div class="l-col-md-3">
-                              <div class="c-form__field">
-                                <input class="js-placeholder" type="text" placeholder="Квартира">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="l-row h-align-items-center">
-                            <div class="l-col-sm-6">
-                              <div class="c-form__field">
-                                <textarea class="js-textarea" placeholder="Комментарий"></textarea>
-                              </div>
-                            </div>
-                            <div class="l-col-sm-6">
-                              <div class="c-form-cart-delivery-text">
-                                <p>стоимость доставки</p>
-                                <p>фиксированная:</p>
-                                <p>по Москве – 400 ₽,</p>
-                                <p>по Московской Области − 600 ₽.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="l-row">
-                            <div class="l-col-sm-6">
-                              <div class="l-row h-align-items-center">
-                                <div class="l-col-sm-6">
-                                  <div class="c-form__required-label">*Обязательные поля</div>
-                                </div>
-                                <div class="l-col-sm-6">
-                                  <label class="c-input-checkbox">
-                                    <input type="checkbox" checked><span class="c-input-checkbox__label">Запомнить адрес</span>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
+            <div class="l-page-layout-sidebar">
+              <div class="l-page-sidebar">
+                <div class="c-catalog-nav">
+                  <nav class="c-menu-category c-menu js-menu-category">
+                    <ul>
+                      <li>
+                        <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Профиль</span></a></div>
+                      </li>
+                      <li>
+                        <div class="c-menu__item has-dropdown is-expanded"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Заказы</span><span class="c-menu__dropdown-toggle">
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-d">
+                                <use xlink:href="assets/images/icons.svg#arrow-d"></use>
+                              </svg></span></a>
+                          <div class="c-menu__dropdown">
+                            <ul>
+                              <li>
+                                <div class="c-menu__item is-active"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Текущие (2)</span></a></div>
+                              </li>
+                              <li>
+                                <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">История (99)</span></a></div>
+                              </li>
+                            </ul>
                           </div>
                         </div>
-                        <div class="c-form__footer">
-                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
-                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
-                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
-                              </svg></a></div>
-                          <div class="c-form__submit">
-                            <button class="c-btn">Продолжить</button>
+                      </li>
+                      <li>
+                        <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Избранное (6)</span><span class="c-menu__dropdown-toggle">
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-d">
+                                <use xlink:href="assets/images/icons.svg#arrow-d"></use>
+                              </svg></span></a>
+                          <div class="c-menu__dropdown">
+                            <ul>
+                              <li>
+                                <div class="c-menu__item is-active"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Избранное (2)</span></a></div>
+                              </li>
+                              <li>
+                                <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Избранное (99)</span></a></div>
+                              </li>
+                            </ul>
                           </div>
                         </div>
+                      </li>
+                      <li>
+                        <div class="c-menu__item is-active"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Сравнение (12)</span></a></div>
+                      </li>
+                      <li>
+                        <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Бонусы</span></a></div>
+                      </li>
+                      <li>
+                        <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Адреса доставок</span></a></div>
+                      </li>
+                      <li>
+                        <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Карты и реквизиты</span></a></div>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="l-page-content">
+                <div class="c-panel-order">
+                  <div class="c-panel-order__head">
+                    <table class="c-panel-order__table">
+                      <thead class="c-panel-order__table__head">
+                        <th class="c-panel-order__table__td-380">Статус</th>
+                        <th class="c-panel-order__table__td-150">Заказ №</th>
+                        <th>Дата заказа</th>
+                      </thead>
+                      <tbody class="c-panel-order__table__body">
+                        <td>
+                          <div class="c-panel-order__status">Передан в доставку</div>
+                        </td>
+                        <td><span>1 234</span></td>
+                        <td><span>12. 06. 2018</span></td>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="c-panel-order__body">
+                    <div class="c-panel-order__list has-dropdown is-expanded js-order-list">
+                      <div class="c-panel-order__list__head">
+                        <div class="c-panel-order__list__title">Состав заказа (4)</div>
+                      </div>
+                      <div class="c-panel-order__list__body">
+                        <table class="c-panel-order__table">
+                          <thead class="c-panel-order__table__head">
+                            <th class="c-panel-order__table__td-380">Товар</th>
+                            <th class="c-panel-order__table__td-150">Цена</th>
+                            <th class="c-panel-order__table__td-150">Количество</th>
+                            <th>Сумма</th>
+                          </thead>
+                          <tbody class="c-panel-order__item">
+                            <td>
+                              <div class="c-panel-order__item__head"><a class="c-panel-order__item__img" href="#"><img src="assets/images/temp/product-1.jpg" alt=""></a>
+                                <div class="c-panel-order__item__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                              <div class="c-panel-order__item__price-old">12 345 ₽</div>
+                            </td>
+                            <td><span>1 шт</span></td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                            </td>
+                          </tbody>
+                          <tbody class="c-panel-order__item">
+                            <td>
+                              <div class="c-panel-order__item__head"><a class="c-panel-order__item__img" href="#"><img src="assets/images/temp/product-2.jpg" alt=""></a>
+                                <div class="c-panel-order__item__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                              <div class="c-panel-order__item__price-old">12 345 ₽</div>
+                            </td>
+                            <td><span>1 шт</span></td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                            </td>
+                          </tbody>
+                          <tbody class="c-panel-order__item">
+                            <td>
+                              <div class="c-panel-order__item__head"><a class="c-panel-order__item__img" href="#"><img src="assets/images/temp/product-3.jpg" alt=""></a>
+                                <div class="c-panel-order__item__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                              <div class="c-panel-order__item__price-old">12 345 ₽</div>
+                            </td>
+                            <td><span>1 шт</span></td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                            </td>
+                          </tbody>
+                          <tbody class="c-panel-order__item">
+                            <td>
+                              <div class="c-panel-order__item__head"><a class="c-panel-order__item__img" href="#"><img src="assets/images/temp/product-4.jpg" alt=""></a>
+                                <div class="c-panel-order__item__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                              <div class="c-panel-order__item__price-old">12 345 ₽</div>
+                            </td>
+                            <td><span>1 шт</span></td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                            </td>
+                          </tbody>
+                          <tbody class="c-panel-order__item">
+                            <td>
+                              <div class="c-panel-order__item__head"><a class="c-panel-order__item__img" href="#"><img src="assets/images/temp/product-5.jpg" alt=""></a>
+                                <div class="c-panel-order__item__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                              <div class="c-panel-order__item__price-old">12 345 ₽</div>
+                            </td>
+                            <td><span>1 шт</span></td>
+                            <td>
+                              <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                            </td>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
-                  <div class="l-cart__form">
-                    <div class="l-cart__form__body">
-                      <div class="c-form c-form--panel c-form-cart">
-                        <div class="c-form__head">
-                          <div class="c-form__title">Выберите способ получения</div>
-                        </div>
-                        <div class="c-form__body">
-                          <div class="c-form__field">
-                            <div class="c-radio-group">
-                              <label class="c-radio-group__label">
-                                <input type="radio" name="delivery-type1" value="1"><span>курьер</span>
-                              </label>
-                              <label class="c-radio-group__label">
-                                <input type="radio" name="delivery-type1" value="2" checked><span>транспортная компания</span>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="l-row">
-                            <div class="l-col-md-6">
-                              <div class="c-form__field">
-                                <select class="js-select">
-                                  <option>Новый адрес</option>
-                                  <option>Новый адрес</option>
-                                  <option>Новый адрес</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="l-row">
-                            <div class="l-col-md-6">
-                              <div class="c-form__field">
-                                <select class="js-select js-placeholder" data-placeholder="Страна*" required>
-                                  <option>Российская Федерация</option>
-                                  <option>Российская Федерация</option>
-                                  <option>Российская Федерация</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="l-col-md-6">
-                              <div class="c-form__field">
-                                <select class="js-select js-placeholder" data-placeholder="Город*" required>
-                                  <option>Москва</option>
-                                  <option>Москва</option>
-                                  <option>Москва</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="l-row">
-                            <div class="l-col-md-6">
-                              <div class="c-form__field">
-                                <input class="js-placeholder" type="text" placeholder="Улица*" required>
-                              </div>
-                            </div>
-                            <div class="l-col-md-6">
-                              <div class="l-row">
-                                <div class="l-col-md-3">
-                                  <div class="c-form__field">
-                                    <input class="js-placeholder" type="text" placeholder="Дом*">
-                                  </div>
-                                </div>
-                                <div class="l-col-md-3">
-                                  <div class="c-form__field">
-                                    <input class="js-placeholder" type="text" placeholder="Стр.">
-                                  </div>
-                                </div>
-                                <div class="l-col-md-3">
-                                  <div class="c-form__field">
-                                    <input class="js-placeholder" type="text" placeholder="Корп.">
-                                  </div>
-                                </div>
-                                <div class="l-col-md-3">
-                                  <div class="c-form__field">
-                                    <input class="js-placeholder" type="text" placeholder="Кв.">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="l-row h-align-items-center">
-                            <div class="l-col-sm-6">
-                              <div class="c-form__field">
-                                <textarea class="js-textarea" placeholder="Комментарий"></textarea>
-                              </div>
-                            </div>
-                            <div class="l-col-sm-6">
-                              <div class="c-form-cart-delivery-text">
-                                <p>Стоимость доставки</p>
-                                <p>в ваш регион</p>
-                                <p>уточняйте у менеджера</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="l-row">
-                            <div class="l-col-sm-6">
-                              <div class="l-row h-align-items-center">
-                                <div class="l-col-sm-6">
-                                  <div class="c-form__required-label">*Обязательные поля</div>
-                                </div>
-                                <div class="l-col-sm-6">
-                                  <label class="c-input-checkbox">
-                                    <input type="checkbox" checked><span class="c-input-checkbox__label">Запомнить адрес</span>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="c-form__footer">
-                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
-                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
-                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
-                              </svg></a></div>
-                          <div class="c-form__submit">
-                            <button class="c-btn">Продолжить</button>
-                          </div>
-                        </div>
-                      </div>
+                  <div class="c-panel-order__footer">
+                    <div class="c-panel-order__cancel"><a class="c-btn c-btn--white" href="#">Отменить заказ</a></div>
+                    <div class="c-panel-order__total">
+                      <div class="c-panel-order__total__title">Общая стоимость</div>
+                      <div class="c-panel-order__total__price"><span>99 998 032 ₽</span></div>
                     </div>
                   </div>
                 </div>
-                <div class="l-cart__aside">
-                  <div class="c-cart-info">
-                    <div class="c-cart-info__head">
-                      <div class="c-cart-info__title">В вашей корзине</div>
-                    </div>
-                    <div class="c-cart-info__body">
-                      <div class="c-cart-info__table">
-                        <div class="c-cart-info__table__row">
-                          <div class="c-cart-info__table__th">Состав</div>
-                          <div class="c-cart-info__table__td">3 товара ( 47 840 ₽ )</div>
-                        </div>
-                        <div class="c-cart-info__table__row">
-                          <div class="c-cart-info__table__th">Скидка</div>
-                          <div class="c-cart-info__table__td">-2 659 ₽</div>
-                        </div>
-                        <div class="c-cart-info__table__total">
-                          <div class="c-cart-info__table__row">
-                            <div class="c-cart-info__table__th">Итого к оплате</div>
-                            <div class="c-cart-info__table__td">
-                              <div class="c-cart-info__price">45 436 ₽</div>
-                            </div>
-                          </div>
-                        </div>
+                <div class="c-panel-order">
+                  <div class="c-panel-order__info">
+                    <table class="c-panel-order__table">
+                      <thead class="c-panel-order__table__head">
+                        <tr>
+                          <th class="c-panel-order__table__td-380">Статус</th>
+                          <th class="c-panel-order__table__td-150">Заказ №</th>
+                          <th>Дата заказа</th>
+                        </tr>
+                      </thead>
+                      <tbody class="c-panel-order__table__body">
+                        <tr>
+                          <td>
+                            <div class="c-panel-order__status">Комплектуется</div>
+                          </td>
+                          <td><span>1 234</span></td>
+                          <td><span>12. 06. 2018</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="c-panel-order__body">
+                    <div class="c-panel-order__list has-dropdown is-expanded js-order-list">
+                      <div class="c-panel-order__list__head">
+                        <div class="c-panel-order__list__title">Состав заказа (4)</div>
+                      </div>
+                      <div class="c-panel-order__list__body">
+                        <table class="c-panel-order__table">
+                          <thead class="c-panel-order__table__head">
+                            <tr>
+                              <th class="c-panel-order__table__td-380">Товар</th>
+                              <th class="c-panel-order__table__td-150">Цена</th>
+                              <th class="c-panel-order__table__td-150">Количество</th>
+                              <th>Сумма</th>
+                            </tr>
+                          </thead>
+                          <tbody class="c-panel-order__item">
+                            <tr>
+                              <td>
+                                <div class="c-panel-order__item__head"><a class="c-panel-order__item__img" href="#"><img src="assets/images/temp/product-1.jpg" alt=""></a>
+                                  <div class="c-panel-order__item__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                                <div class="c-panel-order__item__price-old">12 345 ₽</div>
+                              </td>
+                              <td><span>1 шт</span></td>
+                              <td>
+                                <div class="c-panel-order__item__price">99 129 345 ₽</div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
-                    <div class="c-cart-info__footer">
-                      <div class="c-cart-info__step"><span>шаг 2  / 4</span></div>
+                  </div>
+                  <div class="c-panel-order__footer">
+                    <div class="c-panel-order__cancel"><a class="c-btn c-btn--white" href="#">Отменить заказ</a></div>
+                    <div class="c-panel-order__total">
+                      <div class="c-panel-order__total__title">Общая стоимость</div>
+                      <div class="c-panel-order__total__price"><span>99 998 032 ₽</span></div>
                     </div>
                   </div>
                 </div>
