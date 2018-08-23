@@ -117,7 +117,7 @@
                   </div>
                 </div>
                 <div class="c-header__search">
-                  <form class="c-form" action="/search">
+                  <form action="/search">
                     <input class="c-header__search__field" type="text" placeholder="Найти объектив для фотоаппарата">
                     <button class="c-header__search__submit" type="submit">
                       <svg class="c-icon c-icon-svg c-icon-svg-search">
@@ -259,7 +259,7 @@
                 </div>
               </div>
               <div class="c-header-fixed__search">
-                <form class="c-form" action="/search">
+                <form action="/search">
                   <input class="c-header-fixed__search__field" type="text" placeholder="Найти объектив для фотоаппарата">
                   <button class="c-header-fixed__search__submit" type="submit">
                     <svg class="c-icon c-icon-svg c-icon-svg-search">
@@ -290,11 +290,45 @@
           </div>
         </header>
       </div>
+      <header class="c-header-product" id="js-header-product">
+        <div class="l-container">
+          <div class="c-header-product__inner">
+            <div class="c-header-product__left">
+              <div class="c-header-product__img"><img src="assets/images/temp/product-1.jpg" alt="Canon EOS 5DSR Body"></div>
+              <div class="c-header-product__head">
+                <div class="c-header-product__title"><span>Canon EOS 5DSR Body</span></div>
+                <div class="c-header-product__status">
+                  <div class="c-product-status">Есть в наличии</div>
+                </div>
+              </div>
+            </div>
+            <div class="c-header-product__right">
+              <div class="c-header-product__prices">
+                <div class="c-header-product__price"><span>99 129 345 ₽</span></div>
+                <div class="c-header-product__price-old"><span>120 345 ₽</span></div>
+              </div>
+              <div class="c-header-product__form">
+                <div class="c-header-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
+                    <svg class="c-icon c-icon-svg c-icon-svg-click">
+                      <use xlink:href="assets/images/icons.svg#click"></use>
+                    </svg></a></div>
+                <div class="c-header-product__submit">
+                  <button class="c-btn-cart is-active">
+                    <svg class="c-icon c-icon-svg c-icon-svg-cart-ok">
+                      <use xlink:href="assets/images/icons.svg#cart-ok"></use>
+                    </svg>В корзине
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
       <div class="l-main-body">
         <div class="l-page-header">
           <div class="l-container">
             <div class="l-page-breadcrumbs">
-              <nav class="c-breadcrumbs js-breadcrumbs">
+              <nav class="c-breadcrumbs">
                 <ul>
                   <li>
                     <div class="c-breadcrumbs__item"><a class="c-breadcrumbs__item__link" href="/">Главная &ndash;</a></div>
@@ -355,7 +389,7 @@
             <div class="l-page-title">
               <h1>Canon EOS 5DSR Body</h1>
             </div>
-            <div class="c-product-card">
+            <div class="c-product-card" id="product-card">
               <div class="c-product-card__head">
                 <div class="c-product-card__number">
                   <ul>
@@ -376,14 +410,14 @@
                 <div class="c-product-card__actions">
                   <ul>
                     <li>
-                      <button class="c-product-card__compare-btn">
+                      <button class="c-btn-compare c-btn-compare--btn">
                         <svg class="c-icon c-icon-svg c-icon-svg-list">
                           <use xlink:href="assets/images/icons.svg#list"></use>
                         </svg><span>Сравнить</span>
                       </button>
                     </li>
                     <li>
-                      <button class="c-product-card__favorite-btn">
+                      <button class="c-btn-favorite c-btn-favorite--btn">
                         <svg class="c-icon c-icon-svg c-icon-svg-heart">
                           <use xlink:href="assets/images/icons.svg#heart"></use>
                         </svg><span>Отложить</span>
@@ -433,16 +467,18 @@
                   <div class="c-product-card__desc">
                     <p>Профессиональная цифровая зеркальная камера, 50,6 Мп, с подавителем фильтра нижних частот</p><a class="c-product-card__desc__more js-product-desc-btn" href="#desc">Полное описание</a>
                   </div>
-                  <div class="c-product-card__status">Есть в наличии</div>
+                  <div class="c-product-card__status">
+                    <div class="c-product-status c-product-status--red">Под заказ</div>
+                  </div>
                   <div class="c-product-card__form">
                     <div class="c-product-card__submit">
-                      <button class="c-product-card__submit-btn" type="submit">в корзину
+                      <button class="c-btn-cart" type="submit">в корзину
                         <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                           <use xlink:href="assets/images/icons.svg#cart-add"></use>
                         </svg>
                       </button>
                     </div>
-                    <div class="c-product-card__submit-fast"><a class="c-product-card__submit-fast-btn" href="#">В 1 КЛИК
+                    <div class="c-product-card__submit-fast"><a class="c-btn-oneclick c-btn-oneclick--btn" href="#">В 1 КЛИК
                         <svg class="c-icon c-icon-svg c-icon-svg-click">
                           <use xlink:href="assets/images/icons.svg#click"></use>
                         </svg></a></div>
@@ -503,7 +539,7 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -516,13 +552,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -546,7 +582,7 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -559,13 +595,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -589,7 +625,7 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -602,13 +638,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -632,7 +668,7 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -645,13 +681,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -675,7 +711,7 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -688,13 +724,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -718,7 +754,7 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -731,13 +767,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -761,7 +797,7 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -774,13 +810,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -824,9 +860,550 @@
                       </ol>
                     </div>
                   </div>
-                  <div class="c-tabs__tab" id="specs"></div>
-                  <div class="c-tabs__tab" id="docs"></div>
-                  <div id="extra">4</div>
+                  <div class="c-tabs__tab" id="specs">
+                    <div class="l-product-card-tab">
+                      <div class="c-table-specs js-table-specs">
+                        <div class="c-table-specs__item">
+                          <div class="c-table-specs__item__body">
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Тип фотокамеры</div>
+                              <div class="c-table-specs__item__td">Цифровая зеркальная фотокамера</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-table-specs__item has-dropdown is-expanded">
+                          <div class="c-table-specs__item__head">
+                            <div class="c-table-specs__item__title"><span>Датчик изображения</span></div>
+                          </div>
+                          <div class="c-table-specs__item__body">
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Тип</div>
+                              <div class="c-table-specs__item__td">36 x 24 мм CMOS</div>
+                            </div>
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Количество эффективных пикселей</div>
+                              <div class="c-table-specs__item__td">прибл. 50,6 МП</div>
+                            </div>
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Общее количество пикселей</div>
+                              <div class="c-table-specs__item__td">прибл. 53 МП</div>
+                            </div>
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Соотношение сторон</div>
+                              <div class="c-table-specs__item__td">3:2</div>
+                            </div>
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Фильтр нижних частот</div>
+                              <div class="c-table-specs__item__td">Встроенный/фиксированный</div>
+                            </div>
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Очистка датчика</div>
+                              <div class="c-table-specs__item__td">Встроенная система очистки EOS</div>
+                            </div>
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Тип цветного фильтра</div>
+                              <div class="c-table-specs__item__td">Основные цвета</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-table-specs__item has-dropdown is-expanded">
+                          <div class="c-table-specs__item__head">
+                            <div class="c-table-specs__item__title"><span>Процессор</span></div>
+                          </div>
+                          <div class="c-table-specs__item__body">
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Тип</div>
+                              <div class="c-table-specs__item__td">Два процессора DIGIC 6</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-table-specs__item has-dropdown is-expanded">
+                          <div class="c-table-specs__item__head">
+                            <div class="c-table-specs__item__title"><span>Объективы</span></div>
+                          </div>
+                          <div class="c-table-specs__item__body">
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Крепление объектива</div>
+                              <div class="c-table-specs__item__td">EF (кроме объективов EF-S/EF-M)</div>
+                            </div>
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Фокусное расстояние</div>
+                              <div class="c-table-specs__item__td">Эквивалентно 1,0 фокусного расстояния объектива</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-table-specs__item has-dropdown is-expanded">
+                          <div class="c-table-specs__item__head">
+                            <div class="c-table-specs__item__title"><span>Управление экспозицией</span></div>
+                          </div>
+                          <div class="c-table-specs__item__body">
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Режимы замера</div>
+                              <div class="c-table-specs__item__td">
+                                <div class="c-table-specs__item__row">
+                                  <div class="c-table-specs__item__td">RGB + инфракрасный датчик замера экспозиции с разрешением 150 000 пикселей</div>
+                                </div>
+                                <div class="c-table-specs__item__row">
+                                  <div class="c-table-specs__item__td">
+                                    <p>Система EOS iSA с 252-зонным замером:</p>
+                                    <ol>
+                                      <li>Оценочный замер (сопряжённый с любой точкой автофокусировки) </li>
+                                      <li>Частичный замер (прибл. 6,1% площади видоискателя по центру) </li>
+                                      <li>Точечный замер (прибл. 1,3% площади видоискателя по центру) </li>
+                                      <li>Замер по точке автофокусировки не производится </li>
+                                      <li>Центрально-взвешенный замер</li>
+                                    </ol>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Фиксация экспозиции</div>
+                              <div class="c-table-specs__item__td">
+                                <div class="c-table-specs__item__row">
+                                  <div class="c-table-specs__item__td">Авто: работает в режиме покадровой автофокусировки с оценочным замером при достижении фокуса</div>
+                                </div>
+                                <div class="c-table-specs__item__row">
+                                  <div class="c-table-specs__item__td">Ручная: с помощью кнопки фиксации экспозиции во всех режимах экспозиции</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-table-specs__item has-dropdown is-expanded">
+                          <div class="c-table-specs__item__head">
+                            <div class="c-table-specs__item__title"><span>Угол поля зрения</span></div>
+                          </div>
+                          <div class="c-table-specs__item__body">
+                            <div class="c-table-specs__item__row">
+                              <div class="c-table-specs__item__th">Формат 16:9</div>
+                              <div class="c-table-specs__item__td">
+                                <table class="c-table-specs__table">
+                                  <tr>
+                                    <th>1x</th>
+                                    <td>50 мм:</td>
+                                    <td>29°00' x 16°00'</td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td>50 мм:</td>
+                                    <td>29°00' x 16°00'</td>
+                                  </tr>
+                                  <tr>
+                                    <th>2x</th>
+                                    <td>50 мм:</td>
+                                    <td>29°00' x 16°00'</td>
+                                  </tr>
+                                  <tr>
+                                    <th>&nbsp;</th>
+                                    <td>50 мм:</td>
+                                    <td>29°00' x 16°00'</td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-tabs__tab" id="docs">
+                    <div class="l-product-card-tab">
+                      <ul class="c-list-product-files">
+                        <li><a class="c-file-link" href="#">
+                            <svg class="c-icon c-icon-svg c-icon-svg-file">
+                              <use xlink:href="assets/images/icons.svg#file"></use>
+                            </svg><span class="c-file-link__title">Руководство пользователя.pdf</span><span class="c-file-link__size">3 mb</span></a></li>
+                        <li><a class="c-file-link" href="#">
+                            <svg class="c-icon c-icon-svg c-icon-svg-file">
+                              <use xlink:href="assets/images/icons.svg#file"></use>
+                            </svg><span class="c-file-link__title">User Guide (US).pdf</span><span class="c-file-link__size">3 mb</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="extra">
+                    <div class="l-product-card-tab-extra">
+                      <div class="l-product-card-tab-extra__aside">
+                        <nav class="c-menu-category c-menu js-menu-category">
+                          <ul>
+                            <li>
+                              <div class="c-menu__item has-dropdown"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Микрофоны и радиосистемы</span><span class="c-menu__dropdown-toggle">
+                                    <svg class="c-icon c-icon-svg c-icon-svg-arrow-d">
+                                      <use xlink:href="assets/images/icons.svg#arrow-d"></use>
+                                    </svg></span></a>
+                                <div class="c-menu__dropdown">
+                                  <ul>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Все микрофоны и радиосистемы</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Вокальные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Студийные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Инструментальные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Петличные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Накамерные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Микрофоны-пушки</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Головные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Радиосистемы</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Головные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Радиосистемы</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Петличные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Накамерные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Микрофоны-пушки</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Головные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Радиосистемы</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Головные микрофоны</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Радиосистемы</span></a></div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="c-menu__item has-dropdown"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Наушники</span><span class="c-menu__dropdown-toggle">
+                                    <svg class="c-icon c-icon-svg c-icon-svg-arrow-d">
+                                      <use xlink:href="assets/images/icons.svg#arrow-d"></use>
+                                    </svg></span></a>
+                                <div class="c-menu__dropdown">
+                                  <ul>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Наушники</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Наушники</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Наушники</span></a></div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="c-menu__item has-dropdown is-expanded"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Усилители</span><span class="c-menu__dropdown-toggle">
+                                    <svg class="c-icon c-icon-svg c-icon-svg-arrow-d">
+                                      <use xlink:href="assets/images/icons.svg#arrow-d"></use>
+                                    </svg></span></a>
+                                <div class="c-menu__dropdown">
+                                  <ul>
+                                    <li>
+                                      <div class="c-menu__item is-active"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Усилители</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Усилители</span></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Усилители</span></a></div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="c-menu__item is-active"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Микшерные пульты</span></a></div>
+                            </li>
+                            <li>
+                              <div class="c-menu__item"><a class="c-menu__item__link" href="#"><span class="c-menu__item__text">Усилители</span></a></div>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                      <div class="l-product-card-tab-extra__main">
+                        <div class="l-row">
+                          <div class="l-col-md-4">
+                            <div class="c-panel-product c-panel-product--sm">
+                              <div class="c-panel-product__head">
+                                <div class="c-panel-product__badges">
+                                  <ul>
+                                    <li><span class="c-badge c-badge--red">-50%</span></li>
+                                    <li><span class="c-badge">новинка</span></li>
+                                  </ul>
+                                </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
+                              </div>
+                              <div class="c-panel-product__body">
+                                <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
+                                <div class="c-panel-product__title"><a href="#">Конденсаторный студийный</a></div>
+                                <div class="c-panel-product__actions">
+                                  <ul>
+                                    <li>
+                                      <button class="c-btn-favorite">В избранное
+                                        <svg class="c-icon c-icon-svg c-icon-svg-heart">
+                                          <use xlink:href="assets/images/icons.svg#heart"></use>
+                                        </svg>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="c-panel-product__footer">
+                                <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
+                                <div class="c-panel-product__form">
+                                  <div class="c-panel-product__submit">
+                                    <button class="c-btn-cart">
+                                      <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
+                                        <use xlink:href="assets/images/icons.svg#cart-add"></use>
+                                      </svg>В корзину
+                                    </button>
+                                  </div>
+                                  <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
+                                      <svg class="c-icon c-icon-svg c-icon-svg-click">
+                                        <use xlink:href="assets/images/icons.svg#click"></use>
+                                      </svg></a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-col-md-4">
+                            <div class="c-panel-product c-panel-product--sm">
+                              <div class="c-panel-product__head">
+                                <div class="c-panel-product__badges">
+                                  <ul>
+                                    <li><span class="c-badge c-badge--red">-50%</span></li>
+                                    <li><span class="c-badge">новинка</span></li>
+                                  </ul>
+                                </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
+                              </div>
+                              <div class="c-panel-product__body">
+                                <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
+                                <div class="c-panel-product__title"><a href="#">Конденсаторный студийный</a></div>
+                                <div class="c-panel-product__actions">
+                                  <ul>
+                                    <li>
+                                      <button class="c-btn-favorite">В избранное
+                                        <svg class="c-icon c-icon-svg c-icon-svg-heart">
+                                          <use xlink:href="assets/images/icons.svg#heart"></use>
+                                        </svg>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="c-panel-product__footer">
+                                <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
+                                <div class="c-panel-product__form">
+                                  <div class="c-panel-product__submit">
+                                    <button class="c-btn-cart">
+                                      <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
+                                        <use xlink:href="assets/images/icons.svg#cart-add"></use>
+                                      </svg>В корзину
+                                    </button>
+                                  </div>
+                                  <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
+                                      <svg class="c-icon c-icon-svg c-icon-svg-click">
+                                        <use xlink:href="assets/images/icons.svg#click"></use>
+                                      </svg></a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-col-md-4">
+                            <div class="c-panel-product c-panel-product--sm">
+                              <div class="c-panel-product__head">
+                                <div class="c-panel-product__badges">
+                                  <ul>
+                                    <li><span class="c-badge c-badge--red">-50%</span></li>
+                                    <li><span class="c-badge">новинка</span></li>
+                                  </ul>
+                                </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
+                              </div>
+                              <div class="c-panel-product__body">
+                                <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
+                                <div class="c-panel-product__title"><a href="#">Конденсаторный студийный</a></div>
+                                <div class="c-panel-product__actions">
+                                  <ul>
+                                    <li>
+                                      <button class="c-btn-favorite">В избранное
+                                        <svg class="c-icon c-icon-svg c-icon-svg-heart">
+                                          <use xlink:href="assets/images/icons.svg#heart"></use>
+                                        </svg>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="c-panel-product__footer">
+                                <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
+                                <div class="c-panel-product__form">
+                                  <div class="c-panel-product__submit">
+                                    <button class="c-btn-cart">
+                                      <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
+                                        <use xlink:href="assets/images/icons.svg#cart-add"></use>
+                                      </svg>В корзину
+                                    </button>
+                                  </div>
+                                  <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
+                                      <svg class="c-icon c-icon-svg c-icon-svg-click">
+                                        <use xlink:href="assets/images/icons.svg#click"></use>
+                                      </svg></a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-col-md-4">
+                            <div class="c-panel-product c-panel-product--sm">
+                              <div class="c-panel-product__head">
+                                <div class="c-panel-product__badges">
+                                  <ul>
+                                    <li><span class="c-badge c-badge--red">-50%</span></li>
+                                    <li><span class="c-badge">новинка</span></li>
+                                  </ul>
+                                </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
+                              </div>
+                              <div class="c-panel-product__body">
+                                <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
+                                <div class="c-panel-product__title"><a href="#">Конденсаторный студийный</a></div>
+                                <div class="c-panel-product__actions">
+                                  <ul>
+                                    <li>
+                                      <button class="c-btn-favorite">В избранное
+                                        <svg class="c-icon c-icon-svg c-icon-svg-heart">
+                                          <use xlink:href="assets/images/icons.svg#heart"></use>
+                                        </svg>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="c-panel-product__footer">
+                                <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
+                                <div class="c-panel-product__form">
+                                  <div class="c-panel-product__submit">
+                                    <button class="c-btn-cart">
+                                      <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
+                                        <use xlink:href="assets/images/icons.svg#cart-add"></use>
+                                      </svg>В корзину
+                                    </button>
+                                  </div>
+                                  <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
+                                      <svg class="c-icon c-icon-svg c-icon-svg-click">
+                                        <use xlink:href="assets/images/icons.svg#click"></use>
+                                      </svg></a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-col-md-4">
+                            <div class="c-panel-product c-panel-product--sm">
+                              <div class="c-panel-product__head">
+                                <div class="c-panel-product__badges">
+                                  <ul>
+                                    <li><span class="c-badge c-badge--red">-50%</span></li>
+                                    <li><span class="c-badge">новинка</span></li>
+                                  </ul>
+                                </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
+                              </div>
+                              <div class="c-panel-product__body">
+                                <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
+                                <div class="c-panel-product__title"><a href="#">Конденсаторный студийный</a></div>
+                                <div class="c-panel-product__actions">
+                                  <ul>
+                                    <li>
+                                      <button class="c-btn-favorite">В избранное
+                                        <svg class="c-icon c-icon-svg c-icon-svg-heart">
+                                          <use xlink:href="assets/images/icons.svg#heart"></use>
+                                        </svg>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="c-panel-product__footer">
+                                <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
+                                <div class="c-panel-product__form">
+                                  <div class="c-panel-product__submit">
+                                    <button class="c-btn-cart">
+                                      <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
+                                        <use xlink:href="assets/images/icons.svg#cart-add"></use>
+                                      </svg>В корзину
+                                    </button>
+                                  </div>
+                                  <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
+                                      <svg class="c-icon c-icon-svg c-icon-svg-click">
+                                        <use xlink:href="assets/images/icons.svg#click"></use>
+                                      </svg></a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-col-md-4">
+                            <div class="c-panel-product c-panel-product--sm">
+                              <div class="c-panel-product__head">
+                                <div class="c-panel-product__badges">
+                                  <ul>
+                                    <li><span class="c-badge c-badge--red">-50%</span></li>
+                                    <li><span class="c-badge">новинка</span></li>
+                                  </ul>
+                                </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
+                              </div>
+                              <div class="c-panel-product__body">
+                                <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
+                                <div class="c-panel-product__title"><a href="#">Конденсаторный студийный</a></div>
+                                <div class="c-panel-product__actions">
+                                  <ul>
+                                    <li>
+                                      <button class="c-btn-favorite">В избранное
+                                        <svg class="c-icon c-icon-svg c-icon-svg-heart">
+                                          <use xlink:href="assets/images/icons.svg#heart"></use>
+                                        </svg>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="c-panel-product__footer">
+                                <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
+                                <div class="c-panel-product__form">
+                                  <div class="c-panel-product__submit">
+                                    <button class="c-btn-cart">
+                                      <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
+                                        <use xlink:href="assets/images/icons.svg#cart-add"></use>
+                                      </svg>В корзину
+                                    </button>
+                                  </div>
+                                  <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
+                                      <svg class="c-icon c-icon-svg c-icon-svg-click">
+                                        <use xlink:href="assets/images/icons.svg#click"></use>
+                                      </svg></a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -854,14 +1431,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn is-active">В избранном
+                              <button class="c-btn-favorite is-active">В избранном
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart-ok">
                                   <use xlink:href="assets/images/icons.svg#heart-ok"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn is-active">В сравнении
+                              <button class="c-btn-compare is-active">В сравнении
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -874,13 +1451,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn is-active">
+                            <button class="c-btn-cart is-active">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-ok">
                                 <use xlink:href="assets/images/icons.svg#cart-ok"></use>
                               </svg>В корзине
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -904,14 +1481,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn">В сравнение
+                              <button class="c-btn-compare">В сравнение
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -924,13 +1501,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -954,14 +1531,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn">В сравнение
+                              <button class="c-btn-compare">В сравнение
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -974,13 +1551,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1004,14 +1581,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn">В сравнение
+                              <button class="c-btn-compare">В сравнение
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -1024,13 +1601,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1054,14 +1631,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn">В сравнение
+                              <button class="c-btn-compare">В сравнение
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -1074,13 +1651,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1104,14 +1681,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn">В сравнение
+                              <button class="c-btn-compare">В сравнение
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -1124,13 +1701,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1154,14 +1731,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn">В сравнение
+                              <button class="c-btn-compare">В сравнение
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -1174,13 +1751,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1304,14 +1881,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn">В сравнение
+                              <button class="c-btn-compare">В сравнение
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -1324,13 +1901,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1354,14 +1931,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn">В сравнение
+                              <button class="c-btn-compare">В сравнение
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -1374,13 +1951,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1404,14 +1981,14 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
                               </button>
                             </li>
                             <li>
-                              <button class="c-panel-product__compare-btn">В сравнение
+                              <button class="c-btn-compare">В сравнение
                                 <svg class="c-icon c-icon-svg c-icon-svg-list">
                                   <use xlink:href="assets/images/icons.svg#list"></use>
                                 </svg>
@@ -1424,13 +2001,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
                               </svg>В корзину
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1466,9 +2043,9 @@
               <h2 class="c-section__title">Вы смотрели<span class="c-section__count">12</span></h2>
               <div class="c-section-recent__actions">
                 <ul>
-                  <li><a href="#" data-action="hide">скрыть</a></li>
+                  <li><a class="c-link-action" href="#" data-action="hide">скрыть</a></li>
                   <li>
-                    <button data-action="clear">очистить</button>
+                    <button class="c-link-action" data-action="clear">очистить</button>
                   </li>
                 </ul>
               </div>
@@ -1491,7 +2068,7 @@
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn is-active">В избранном
+                              <button class="c-btn-favorite is-active">В избранном
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart-ok">
                                   <use xlink:href="assets/images/icons.svg#heart-ok"></use>
                                 </svg>
@@ -1500,7 +2077,7 @@
                           </ul>
                         </div>
                         <div class="c-panel-product__remove">
-                          <button class="c-panel-product__remove-btn">Удалить
+                          <button class="c-btn-remove c-btn-remove--round">Удалить
                             <svg class="c-icon c-icon-svg c-icon-svg-trash">
                               <use xlink:href="assets/images/icons.svg#trash"></use>
                             </svg>
@@ -1514,13 +2091,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn is-active">
+                            <button class="c-btn-cart is-active">
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-ok">
                                 <use xlink:href="assets/images/icons.svg#cart-ok"></use>
                               </svg>В корзине
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1540,11 +2117,11 @@
                       </div>
                       <div class="c-panel-product__body">
                         <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                        <div class="c-panel-product__title"><a href="#">BOYA BY B02</a></div>
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -1553,7 +2130,7 @@
                           </ul>
                         </div>
                         <div class="c-panel-product__remove">
-                          <button class="c-panel-product__remove-btn">Удалить
+                          <button class="c-btn-remove c-btn-remove--round">Удалить
                             <svg class="c-icon c-icon-svg c-icon-svg-trash">
                               <use xlink:href="assets/images/icons.svg#trash"></use>
                             </svg>
@@ -1567,13 +2144,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">В корзину
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
+                              </svg>
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1593,11 +2170,11 @@
                       </div>
                       <div class="c-panel-product__body">
                         <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                        <div class="c-panel-product__title"><a href="#">BOYA BY B02</a></div>
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -1606,7 +2183,7 @@
                           </ul>
                         </div>
                         <div class="c-panel-product__remove">
-                          <button class="c-panel-product__remove-btn">Удалить
+                          <button class="c-btn-remove c-btn-remove--round">Удалить
                             <svg class="c-icon c-icon-svg c-icon-svg-trash">
                               <use xlink:href="assets/images/icons.svg#trash"></use>
                             </svg>
@@ -1620,13 +2197,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">В корзину
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
+                              </svg>
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1646,11 +2223,11 @@
                       </div>
                       <div class="c-panel-product__body">
                         <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                        <div class="c-panel-product__title"><a href="#">BOYA BY B02</a></div>
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -1659,7 +2236,7 @@
                           </ul>
                         </div>
                         <div class="c-panel-product__remove">
-                          <button class="c-panel-product__remove-btn">Удалить
+                          <button class="c-btn-remove c-btn-remove--round">Удалить
                             <svg class="c-icon c-icon-svg c-icon-svg-trash">
                               <use xlink:href="assets/images/icons.svg#trash"></use>
                             </svg>
@@ -1673,13 +2250,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">В корзину
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
+                              </svg>
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1699,11 +2276,11 @@
                       </div>
                       <div class="c-panel-product__body">
                         <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                        <div class="c-panel-product__title"><a href="#">BOYA BY B02</a></div>
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -1712,7 +2289,7 @@
                           </ul>
                         </div>
                         <div class="c-panel-product__remove">
-                          <button class="c-panel-product__remove-btn">Удалить
+                          <button class="c-btn-remove c-btn-remove--round">Удалить
                             <svg class="c-icon c-icon-svg c-icon-svg-trash">
                               <use xlink:href="assets/images/icons.svg#trash"></use>
                             </svg>
@@ -1726,13 +2303,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">В корзину
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
+                              </svg>
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1752,11 +2329,11 @@
                       </div>
                       <div class="c-panel-product__body">
                         <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                        <div class="c-panel-product__title"><a href="#">BOYA BY B02</a></div>
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -1765,7 +2342,7 @@
                           </ul>
                         </div>
                         <div class="c-panel-product__remove">
-                          <button class="c-panel-product__remove-btn">Удалить
+                          <button class="c-btn-remove c-btn-remove--round">Удалить
                             <svg class="c-icon c-icon-svg c-icon-svg-trash">
                               <use xlink:href="assets/images/icons.svg#trash"></use>
                             </svg>
@@ -1779,13 +2356,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">В корзину
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
+                              </svg>
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>
@@ -1805,11 +2382,11 @@
                       </div>
                       <div class="c-panel-product__body">
                         <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
+                        <div class="c-panel-product__title"><a href="#">BOYA BY B02</a></div>
                         <div class="c-panel-product__actions">
                           <ul>
                             <li>
-                              <button class="c-panel-product__favorite-btn">В избранное
+                              <button class="c-btn-favorite">В избранное
                                 <svg class="c-icon c-icon-svg c-icon-svg-heart">
                                   <use xlink:href="assets/images/icons.svg#heart"></use>
                                 </svg>
@@ -1818,7 +2395,7 @@
                           </ul>
                         </div>
                         <div class="c-panel-product__remove">
-                          <button class="c-panel-product__remove-btn">Удалить
+                          <button class="c-btn-remove c-btn-remove--round">Удалить
                             <svg class="c-icon c-icon-svg c-icon-svg-trash">
                               <use xlink:href="assets/images/icons.svg#trash"></use>
                             </svg>
@@ -1832,13 +2409,13 @@
                         <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
                         <div class="c-panel-product__form">
                           <div class="c-panel-product__submit">
-                            <button class="c-panel-product__submit-btn">
+                            <button class="c-btn-cart">В корзину
                               <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
                                 <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
+                              </svg>
                             </button>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-panel-product__submit-fast-btn" href="#">Купить в 1 клик
+                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
                               <svg class="c-icon c-icon-svg c-icon-svg-click">
                                 <use xlink:href="assets/images/icons.svg#click"></use>
                               </svg></a></div>

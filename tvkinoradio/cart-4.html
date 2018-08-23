@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Error №404</title>
+    <title>Корзина</title>
     <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="assets/images/favicon.ico">
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -30,7 +30,7 @@
       }
     </script>
   </head>
-  <body class="is-page">
+  <body class="is-page is-page-cart">
     <div class="l-main-wrapper"><!--[if lt IE 9]>
 <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
 <![endif]-->
@@ -293,12 +293,262 @@
       <div class="l-main-body">
         <div class="l-page-header">
           <div class="l-container">
-            <h1>Error №404</h1>
+            <div class="l-page-breadcrumbs">
+              <nav class="c-breadcrumbs">
+                <ul>
+                  <li>
+                    <div class="c-breadcrumbs__item"><a class="c-breadcrumbs__item__link" href="/">Главная &ndash;</a></div>
+                  </li>
+                  <li>
+                    <div class="c-breadcrumbs__item"><span>Корзина</span></div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="l-cart-breadcrumbs">
+              <div class="c-cart-nav"><a class="c-cart-nav__item is-completed" href="#">Корзина<span class="c-cart-nav__item__icon">1</span></a>
+                <div class="c-cart-nav__sep">-</div><a class="c-cart-nav__item is-completed" href="#">Контакты<span class="c-cart-nav__item__icon">2</span></a>
+                <div class="c-cart-nav__sep">-</div><a class="c-cart-nav__item is-completed" href="#">Доставка<span class="c-cart-nav__item__icon">3</span></a>
+                <div class="c-cart-nav__sep">-</div><a class="c-cart-nav__item is-active" href="#">Оплата<span class="c-cart-nav__item__icon">4</span></a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="l-page-body">
           <div class="l-container">
-            <div class="l-page-content"></div>
+            <div class="l-page-content">
+              <div class="l-cart">
+                <div class="l-cart__main">
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__title">Выберите способ оплаты</div>
+                        </div>
+                        <div class="c-form__body">
+                          <div class="l-row">
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment" checked><span class="c-input-radio__label">оплата картой онлайн</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment"><span class="c-input-radio__label">картой при получении</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment"><span class="c-input-radio__label">наличные при получении</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-form__footer">
+                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
+                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
+                              </svg></a></div>
+                          <div class="c-form__submit">
+                            <button class="c-btn">Оплатить</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__title">Выберите способ оплаты</div>
+                        </div>
+                        <div class="c-form__body">
+                          <div class="l-row">
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment2"><span class="c-input-radio__label">оплата картой онлайн</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment2" checked><span class="c-input-radio__label">картой при получении</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment2"><span class="c-input-radio__label">наличные при получении</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-form__footer">
+                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
+                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
+                              </svg></a></div>
+                          <div class="c-form__submit">
+                            <button class="c-btn">Подтвердить заказ</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__title">Выберите способ оплаты</div>
+                        </div>
+                        <div class="c-form__body">
+                          <div class="l-row">
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment3" checked><span class="c-input-radio__label">оплата картой онлайн</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment3"><span class="c-input-radio__label">Запросить счет</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-form__footer">
+                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
+                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
+                              </svg></a></div>
+                          <div class="c-form__submit">
+                            <button class="c-btn">Оплатить</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__title">Выберите способ оплаты</div>
+                        </div>
+                        <div class="c-form__body">
+                          <div class="l-row">
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment4"><span class="c-input-radio__label">оплата картой онлайн</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment4" checked><span class="c-input-radio__label">Запросить счет</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-form__footer">
+                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
+                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
+                              </svg></a></div>
+                          <div class="c-form__submit">
+                            <button class="c-btn">Подтвердить заказ</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__title">Выберите способ оплаты</div>
+                        </div>
+                        <div class="c-form__body">
+                          <div class="l-row">
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment5"><span class="c-input-radio__label">оплата картой онлайн</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="payment5" checked><span class="c-input-radio__label">Оплата по счёту</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-4">
+                              <div class="c-form__field"><a class="c-link-file" href="#">Скачать счёт для оплаты</a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-form__footer">
+                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
+                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
+                              </svg></a></div>
+                          <div class="c-form__submit">
+                            <button class="c-btn">Подтвердить заказ</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="l-cart__aside">
+                  <div class="c-cart-info">
+                    <div class="c-cart-info__head">
+                      <div class="c-cart-info__title">В вашей корзине</div>
+                    </div>
+                    <div class="c-cart-info__body">
+                      <div class="c-cart-info__table">
+                        <div class="c-cart-info__table__row">
+                          <div class="c-cart-info__table__th">Состав</div>
+                          <div class="c-cart-info__table__td">3 товара ( 47 840 ₽ )</div>
+                        </div>
+                        <div class="c-cart-info__table__row">
+                          <div class="c-cart-info__table__th">Скидка</div>
+                          <div class="c-cart-info__table__td">-2 659 ₽</div>
+                        </div>
+                        <div class="c-cart-info__table__total">
+                          <div class="c-cart-info__table__row">
+                            <div class="c-cart-info__table__th">Итого к оплате</div>
+                            <div class="c-cart-info__table__td">
+                              <div class="c-cart-info__price">45 436 ₽</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="c-cart-info__footer">
+                      <div class="c-cart-info__step"><span>шаг 2  / 4</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

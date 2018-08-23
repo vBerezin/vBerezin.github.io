@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Поиск</title>
+    <title>Корзина</title>
     <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="assets/images/favicon.ico">
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -30,7 +30,7 @@
       }
     </script>
   </head>
-  <body class="is-page">
+  <body class="is-page is-page-cart">
     <div class="l-main-wrapper"><!--[if lt IE 9]>
 <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите его</a></p>
 <![endif]-->
@@ -294,387 +294,500 @@
         <div class="l-page-header">
           <div class="l-container">
             <div class="l-page-breadcrumbs">
-              <nav class="c-breadcrumbs js-breadcrumbs">
+              <nav class="c-breadcrumbs">
                 <ul>
                   <li>
                     <div class="c-breadcrumbs__item"><a class="c-breadcrumbs__item__link" href="/">Главная &ndash;</a></div>
                   </li>
                   <li>
-                    <div class="c-breadcrumbs__item"><span>Поиск по каталогу</span></div>
+                    <div class="c-breadcrumbs__item"><span>Корзина</span></div>
                   </li>
                 </ul>
               </nav>
             </div>
-            <div class="l-page-title">
-              <h1>«RBYJRFVTHS»</h1>
-            </div>
-            <div class="l-page-subtitle"><span class="c-page-header-count">К сожалению, ничего не нашлось</span><i class="c-icon c-icon-shrugging">&nbsp;</i>
+            <div class="l-cart-breadcrumbs">
+              <div class="c-cart-nav"><a class="c-cart-nav__item is-completed" href="#">Корзина<span class="c-cart-nav__item__icon">1</span></a>
+                <div class="c-cart-nav__sep">-</div><a class="c-cart-nav__item is-active" href="#">Контакты<span class="c-cart-nav__item__icon">2</span></a>
+                <div class="c-cart-nav__sep">-</div><a class="c-cart-nav__item" href="#">Доставка<span class="c-cart-nav__item__icon">3</span></a>
+                <div class="c-cart-nav__sep">-</div><a class="c-cart-nav__item" href="#">Оплата<span class="c-cart-nav__item__icon">4</span></a>
+              </div>
             </div>
           </div>
         </div>
-        <section class="c-section c-section-sale">
+        <div class="l-page-body">
           <div class="l-container">
-            <div class="c-section__head">
-              <h2 class="c-section__title">Спецпредложения<span class="c-section__count">12</span></h2>
-            </div>
-            <div class="c-section-sale__list">
-              <div class="c-panel-product-list">
-                <div class="l-row js-product-list owl-carousel--nav-white">
-                  <div class="l-col-md-3">
-                    <div class="c-panel-product">
-                      <div class="c-panel-product__head">
-                        <div class="c-panel-product__badges">
-                          <ul>
-                            <li><span class="c-badge c-badge--red">-50%</span></li>
-                            <li><span class="c-badge">новинка</span></li>
-                          </ul>
-                        </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
-                      </div>
-                      <div class="c-panel-product__body">
-                        <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">BOYA BY B02</a></div>
-                        <div class="c-panel-product__actions">
-                          <ul>
-                            <li>
-                              <button class="c-btn-favorite is-active">В избранном
-                                <svg class="c-icon c-icon-svg c-icon-svg-heart-ok">
-                                  <use xlink:href="assets/images/icons.svg#heart-ok"></use>
-                                </svg>
-                              </button>
-                            </li>
-                            <li>
-                              <button class="c-btn-compare is-active">В сравнении
-                                <svg class="c-icon c-icon-svg c-icon-svg-list">
-                                  <use xlink:href="assets/images/icons.svg#list"></use>
-                                </svg>
-                              </button>
-                            </li>
-                          </ul>
+            <div class="l-page-content">
+              <div class="l-cart">
+                <div class="l-cart__main">
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__title">Укажите контакнтую информацию</div>
+                        </div>
+                        <div class="c-form__body">
+                          <div class="c-form__field">
+                            <div class="c-radio-group">
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="user-type" value="user-fiz" checked><span>физ. лицо</span>
+                              </label>
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="user-type" value="user-yur"><span>юр.лицо</span>
+                              </label>
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="user-type" value="user-ip"><span>ИП</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="l-row">
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Имя*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Фамилия">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="e-mail*" value="test@test.com">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <div class="c-input-phone">
+                                  <input class="c-input-phone__code" type="text" placeholder="+7" value="+7">
+                                  <input type="text" placeholder="(123)-45-67*" value="(123)-45-67">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-row h-align-items-center">
+                            <div class="l-col-sm-6">
+                              <div class="c-form__required-label">*Обязательные поля</div>
+                            </div>
+                            <div class="l-col-sm-6">
+                              <label class="c-input-checkbox">
+                                <input type="checkbox" checked><span class="c-input-checkbox__label">Уведомлять о статусе заказа по СМС c 9 до 21</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-form__footer">
+                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
+                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
+                              </svg></a></div>
+                          <div class="c-form__submit">
+                            <button class="c-btn">Продолжить</button>
+                          </div>
                         </div>
                       </div>
-                      <div class="c-panel-product__footer">
-                        <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
-                        <div class="c-panel-product__form">
-                          <div class="c-panel-product__submit">
-                            <button class="c-btn-cart is-active">
-                              <svg class="c-icon c-icon-svg c-icon-svg-cart-ok">
-                                <use xlink:href="assets/images/icons.svg#cart-ok"></use>
-                              </svg>В корзине
-                            </button>
+                    </div>
+                    <div class="l-cart__form__license">
+                      <label class="c-input-checkbox">
+                        <input type="checkbox" checked><span class="c-input-checkbox__label">Я старше 18 лет. С Политикой и Соглашением ознакомлен и согласен, и готов получать рассылки</span>
+                      </label>
+                    </div>
+                    <div class="l-cart__form__license">
+                      <label class="c-input-checkbox">
+                        <input type="checkbox" checked><span class="c-input-checkbox__label">Зарегистрировать меня с этими данными</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__title">Укажите контакнтую информацию</div>
+                        </div>
+                        <div class="c-form__body">
+                          <div class="c-form__field">
+                            <div class="c-radio-group">
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="user-type1" value="user-fiz1"><span>физ. лицо</span>
+                              </label>
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="user-type1" value="user-yur1" checked><span>юр.лицо</span>
+                              </label>
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="user-type1" value="user-ip1"><span>ИП</span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
-                              <svg class="c-icon c-icon-svg c-icon-svg-click">
-                                <use xlink:href="assets/images/icons.svg#click"></use>
-                              </svg></a></div>
+                          <div class="c-form__subtitle">1. Контактное лицо</div>
+                          <div class="l-row">
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Имя*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Фамилия">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="e-mail*">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <div class="c-input-phone">
+                                  <input class="c-input-phone__code" type="text" placeholder="+7" value="+7">
+                                  <input type="text" placeholder="(123)-45-67*" value="(123)-45-67">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-row h-align-items-center">
+                            <div class="l-col-sm-6">
+                              <div class="c-form__required-label">*Обязательные поля</div>
+                            </div>
+                            <div class="l-col-sm-6">
+                              <label class="c-input-checkbox">
+                                <input type="checkbox" checked><span class="c-input-checkbox__label">Уведомлять о статусе заказа по СМС c 9 до 21</span>
+                              </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="l-col-md-3">
-                    <div class="c-panel-product">
-                      <div class="c-panel-product__head">
-                        <div class="c-panel-product__badges">
-                          <ul>
-                            <li><span class="c-badge c-badge--red">-50%</span></li>
-                            <li><span class="c-badge">новинка</span></li>
-                          </ul>
-                        </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
-                      </div>
-                      <div class="c-panel-product__body">
-                        <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
-                        <div class="c-panel-product__actions">
-                          <ul>
-                            <li>
-                              <button class="c-btn-favorite">В избранное
-                                <svg class="c-icon c-icon-svg c-icon-svg-heart">
-                                  <use xlink:href="assets/images/icons.svg#heart"></use>
-                                </svg>
-                              </button>
-                            </li>
-                            <li>
-                              <button class="c-btn-compare">В сравнение
-                                <svg class="c-icon c-icon-svg c-icon-svg-list">
-                                  <use xlink:href="assets/images/icons.svg#list"></use>
-                                </svg>
-                              </button>
-                            </li>
-                          </ul>
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__subtitle">2. Реквизиты</div>
                         </div>
-                      </div>
-                      <div class="c-panel-product__footer">
-                        <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
-                        <div class="c-panel-product__form">
-                          <div class="c-panel-product__submit">
-                            <button class="c-btn-cart">
-                              <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
-                                <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
-                            </button>
+                        <div class="c-form__body">
+                          <div class="c-form__field">
+                            <div class="c-radio-group">
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="rekviziti" value="1" checked><span>ввести реквизиты</span>
+                              </label>
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="rekviziti" value="2"><span>загрузить</span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
-                              <svg class="c-icon c-icon-svg c-icon-svg-click">
-                                <use xlink:href="assets/images/icons.svg#click"></use>
+                          <div class="l-row">
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <select class="js-select">
+                                  <option>ооо прайсвотерхаускуперс консультирование</option>
+                                  <option>Ооо прайсвотерхаускуперс юридические услуги </option>
+                                  <option>Добавить новую организацию</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-row">
+                            <div class="l-col-sm-auto">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="org-type" checked><span class="c-input-radio__label">Юридическое лицо</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-auto">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="org-type"><span class="c-input-radio__label">Индивидуальный предприниматель</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-row">
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Наименование организации*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="ИНН*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="КПП*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="ОГРН">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Юридический адрес*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Фактический адрес*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Расчётный счёт*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Наименование Банка*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Корреспондентский счёт">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="БИК*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Город Банка*">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Код ОКПО*" required>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-row h-align-items-center">
+                            <div class="l-col-sm-6">
+                              <div class="c-form__required-label">*Обязательные поля</div>
+                            </div>
+                          </div>
+                          <div class="c-form-cart__bottom-text">
+                            <p>Реквизиты указываются строго в соответствии с учредительными документами организации, которая является плательщиком и получателем заказа</p>
+                          </div>
+                        </div>
+                        <div class="c-form__footer">
+                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
+                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
                               </svg></a></div>
+                          <div class="c-form__submit">
+                            <button class="c-btn">Продолжить</button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="l-col-md-3">
-                    <div class="c-panel-product">
-                      <div class="c-panel-product__head">
-                        <div class="c-panel-product__badges">
-                          <ul>
-                            <li><span class="c-badge c-badge--red">-50%</span></li>
-                            <li><span class="c-badge">новинка</span></li>
-                          </ul>
-                        </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
-                      </div>
-                      <div class="c-panel-product__body">
-                        <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
-                        <div class="c-panel-product__actions">
-                          <ul>
-                            <li>
-                              <button class="c-btn-favorite">В избранное
-                                <svg class="c-icon c-icon-svg c-icon-svg-heart">
-                                  <use xlink:href="assets/images/icons.svg#heart"></use>
-                                </svg>
-                              </button>
-                            </li>
-                            <li>
-                              <button class="c-btn-compare">В сравнение
-                                <svg class="c-icon c-icon-svg c-icon-svg-list">
-                                  <use xlink:href="assets/images/icons.svg#list"></use>
-                                </svg>
-                              </button>
-                            </li>
-                          </ul>
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__subtitle">2. Реквизиты</div>
                         </div>
-                      </div>
-                      <div class="c-panel-product__footer">
-                        <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
-                        <div class="c-panel-product__form">
-                          <div class="c-panel-product__submit">
-                            <button class="c-btn-cart">
-                              <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
-                                <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
-                            </button>
+                        <div class="c-form__body">
+                          <div class="c-form__field">
+                            <div class="c-radio-group">
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="rekviziti1" value="1" checked><span>ввести реквизиты</span>
+                              </label>
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="rekviziti1" value="2"><span>загрузить</span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
-                              <svg class="c-icon c-icon-svg c-icon-svg-click">
-                                <use xlink:href="assets/images/icons.svg#click"></use>
+                          <div class="l-row">
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <select class="js-select">
+                                  <option>ооо прайсвотерхаускуперс консультирование</option>
+                                  <option>Ооо прайсвотерхаускуперс юридические услуги </option>
+                                  <option>Добавить новую организацию</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-row">
+                            <div class="l-col-sm-auto">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="org-type1"><span class="c-input-radio__label">Юридическое лицо</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-auto">
+                              <div class="c-form__field">
+                                <label class="c-input-radio">
+                                  <input type="radio" name="org-type1" checked><span class="c-input-radio__label">Индивидуальный предприниматель</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-row">
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Наименование организации*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="ИНН*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="ОГРНИП">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Юридический адрес*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Фактический адрес*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Расчётный счёт*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Наименование Банка*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Корреспондентский счёт">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="БИК*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Город Банка*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Код ОКПО">
+                              </div>
+                            </div>
+                            <div class="l-col-md-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Код ОКВЭД*" required>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="l-row h-align-items-center">
+                            <div class="l-col-sm-6">
+                              <div class="c-form__required-label">*Обязательные поля</div>
+                            </div>
+                          </div>
+                          <div class="c-form-cart__bottom-text">
+                            <p>Реквизиты указываются строго в соответствии с учредительными документами организации, которая является плательщиком и получателем заказа</p>
+                          </div>
+                        </div>
+                        <div class="c-form__footer">
+                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
+                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
                               </svg></a></div>
+                          <div class="c-form__submit">
+                            <button class="c-btn">Продолжить</button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="l-col-md-3">
-                    <div class="c-panel-product">
-                      <div class="c-panel-product__head">
-                        <div class="c-panel-product__badges">
-                          <ul>
-                            <li><span class="c-badge c-badge--red">-50%</span></li>
-                            <li><span class="c-badge">новинка</span></li>
-                          </ul>
-                        </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
-                      </div>
-                      <div class="c-panel-product__body">
-                        <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
-                        <div class="c-panel-product__actions">
-                          <ul>
-                            <li>
-                              <button class="c-btn-favorite">В избранное
-                                <svg class="c-icon c-icon-svg c-icon-svg-heart">
-                                  <use xlink:href="assets/images/icons.svg#heart"></use>
-                                </svg>
-                              </button>
-                            </li>
-                            <li>
-                              <button class="c-btn-compare">В сравнение
-                                <svg class="c-icon c-icon-svg c-icon-svg-list">
-                                  <use xlink:href="assets/images/icons.svg#list"></use>
-                                </svg>
-                              </button>
-                            </li>
-                          </ul>
+                  <div class="l-cart__form">
+                    <div class="l-cart__form__body">
+                      <div class="c-form c-form--panel c-form-cart">
+                        <div class="c-form__head">
+                          <div class="c-form__subtitle">2. Реквизиты</div>
                         </div>
-                      </div>
-                      <div class="c-panel-product__footer">
-                        <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
-                        <div class="c-panel-product__form">
-                          <div class="c-panel-product__submit">
-                            <button class="c-btn-cart">
-                              <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
-                                <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
-                            </button>
+                        <div class="c-form__body">
+                          <div class="c-form__field">
+                            <div class="c-radio-group">
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="rekviziti2" value="1" checked><span>ввести реквизиты</span>
+                              </label>
+                              <label class="c-radio-group__label">
+                                <input type="radio" name="rekviziti2" value="2" checked><span>загрузить</span>
+                              </label>
+                            </div>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
-                              <svg class="c-icon c-icon-svg c-icon-svg-click">
-                                <use xlink:href="assets/images/icons.svg#click"></use>
+                          <div class="l-row h-align-items-center">
+                            <div class="l-col-sm-6">
+                              <div class="c-form__field">
+                                <input class="js-placeholder" type="text" placeholder="Наименование организации*" required>
+                              </div>
+                            </div>
+                            <div class="l-col-sm-6">
+                              <div class="c-form__field">
+                                <input class="js-input-file" type="file" required data-placeholder="Загрузить файл с реквизитами">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-form__footer">
+                          <div class="c-form__back"><a class="c-form__back-btn" href="#">НАЗАД
+                              <svg class="c-icon c-icon-svg c-icon-svg-arrow-left">
+                                <use xlink:href="assets/images/icons.svg#arrow-left"></use>
                               </svg></a></div>
+                          <div class="c-form__submit">
+                            <button class="c-btn">Продолжить</button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="l-col-md-3">
-                    <div class="c-panel-product">
-                      <div class="c-panel-product__head">
-                        <div class="c-panel-product__badges">
-                          <ul>
-                            <li><span class="c-badge c-badge--red">-50%</span></li>
-                            <li><span class="c-badge">новинка</span></li>
-                          </ul>
-                        </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
-                      </div>
-                      <div class="c-panel-product__body">
-                        <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
-                        <div class="c-panel-product__actions">
-                          <ul>
-                            <li>
-                              <button class="c-btn-favorite">В избранное
-                                <svg class="c-icon c-icon-svg c-icon-svg-heart">
-                                  <use xlink:href="assets/images/icons.svg#heart"></use>
-                                </svg>
-                              </button>
-                            </li>
-                            <li>
-                              <button class="c-btn-compare">В сравнение
-                                <svg class="c-icon c-icon-svg c-icon-svg-list">
-                                  <use xlink:href="assets/images/icons.svg#list"></use>
-                                </svg>
-                              </button>
-                            </li>
-                          </ul>
+                </div>
+                <div class="l-cart__aside">
+                  <div class="c-cart-info" id="cart-info">
+                    <div class="c-cart-info__head">
+                      <div class="c-cart-info__title">В вашей корзине</div>
+                    </div>
+                    <div class="c-cart-info__body">
+                      <div class="c-cart-info__table">
+                        <div class="c-cart-info__table__row">
+                          <div class="c-cart-info__table__th">Состав</div>
+                          <div class="c-cart-info__table__td">3 товара ( 47 840 ₽ )</div>
                         </div>
-                      </div>
-                      <div class="c-panel-product__footer">
-                        <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
-                        <div class="c-panel-product__form">
-                          <div class="c-panel-product__submit">
-                            <button class="c-btn-cart">
-                              <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
-                                <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
-                            </button>
+                        <div class="c-cart-info__table__row">
+                          <div class="c-cart-info__table__th">Скидка</div>
+                          <div class="c-cart-info__table__td">-2 659 ₽</div>
+                        </div>
+                        <div class="c-cart-info__table__total">
+                          <div class="c-cart-info__table__row">
+                            <div class="c-cart-info__table__th">Итого к оплате</div>
+                            <div class="c-cart-info__table__td">
+                              <div class="c-cart-info__price">45 436 ₽</div>
+                            </div>
                           </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
-                              <svg class="c-icon c-icon-svg c-icon-svg-click">
-                                <use xlink:href="assets/images/icons.svg#click"></use>
-                              </svg></a></div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="l-col-md-3">
-                    <div class="c-panel-product">
-                      <div class="c-panel-product__head">
-                        <div class="c-panel-product__badges">
-                          <ul>
-                            <li><span class="c-badge c-badge--red">-50%</span></li>
-                            <li><span class="c-badge">новинка</span></li>
-                          </ul>
-                        </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
-                      </div>
-                      <div class="c-panel-product__body">
-                        <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
-                        <div class="c-panel-product__actions">
-                          <ul>
-                            <li>
-                              <button class="c-btn-favorite">В избранное
-                                <svg class="c-icon c-icon-svg c-icon-svg-heart">
-                                  <use xlink:href="assets/images/icons.svg#heart"></use>
-                                </svg>
-                              </button>
-                            </li>
-                            <li>
-                              <button class="c-btn-compare">В сравнение
-                                <svg class="c-icon c-icon-svg c-icon-svg-list">
-                                  <use xlink:href="assets/images/icons.svg#list"></use>
-                                </svg>
-                              </button>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="c-panel-product__footer">
-                        <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
-                        <div class="c-panel-product__form">
-                          <div class="c-panel-product__submit">
-                            <button class="c-btn-cart">
-                              <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
-                                <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
-                            </button>
-                          </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
-                              <svg class="c-icon c-icon-svg c-icon-svg-click">
-                                <use xlink:href="assets/images/icons.svg#click"></use>
-                              </svg></a></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="l-col-md-3">
-                    <div class="c-panel-product">
-                      <div class="c-panel-product__head">
-                        <div class="c-panel-product__badges">
-                          <ul>
-                            <li><span class="c-badge c-badge--red">-50%</span></li>
-                            <li><span class="c-badge">новинка</span></li>
-                          </ul>
-                        </div><a class="c-panel-product__img" href="#"><img src="assets/images/temp/prod-1.jpg" alt="BOYA BY B02"></a>
-                      </div>
-                      <div class="c-panel-product__body">
-                        <div class="c-panel-product__category"><a href="#">Вокальные микрофоны</a></div>
-                        <div class="c-panel-product__title"><a href="#">Конденсаторный студийный микрофон с подставкой Condenser Microphone KTV</a></div>
-                        <div class="c-panel-product__actions">
-                          <ul>
-                            <li>
-                              <button class="c-btn-favorite">В избранное
-                                <svg class="c-icon c-icon-svg c-icon-svg-heart">
-                                  <use xlink:href="assets/images/icons.svg#heart"></use>
-                                </svg>
-                              </button>
-                            </li>
-                            <li>
-                              <button class="c-btn-compare">В сравнение
-                                <svg class="c-icon c-icon-svg c-icon-svg-list">
-                                  <use xlink:href="assets/images/icons.svg#list"></use>
-                                </svg>
-                              </button>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="c-panel-product__footer">
-                        <div class="c-panel-product__prices"><span class="c-panel-product__price">123 345 &#8381;</span><span class="c-panel-product__price-old">880 &#8381;</span></div>
-                        <div class="c-panel-product__form">
-                          <div class="c-panel-product__submit">
-                            <button class="c-btn-cart">
-                              <svg class="c-icon c-icon-svg c-icon-svg-cart-add">
-                                <use xlink:href="assets/images/icons.svg#cart-add"></use>
-                              </svg>В корзину
-                            </button>
-                          </div>
-                          <div class="c-panel-product__submit-fast"><a class="c-btn-oneclick" href="#">Купить в 1 клик
-                              <svg class="c-icon c-icon-svg c-icon-svg-click">
-                                <use xlink:href="assets/images/icons.svg#click"></use>
-                              </svg></a></div>
-                        </div>
-                      </div>
+                    <div class="c-cart-info__footer">
+                      <div class="c-cart-info__step"><span>шаг 2  / 4</span></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
       <div class="l-main-footer">
         <footer class="c-footer js-main-footer" id="footer">
