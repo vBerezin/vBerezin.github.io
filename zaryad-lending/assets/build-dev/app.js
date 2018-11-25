@@ -15050,12 +15050,6 @@ $.fn.extend({
 
 //= require vendor/*
 
-
-if(typeof hs !== "undefined"){
-    hs.graphicsDir = window.location.origin+"/assets/images/highslide/";
-    hs.restoreCursor = "zoomout.cur";
-}
-
 if(typeof $.fn.owlCarousel === "function"){
     $.fn.owlCarousel.Constructor.Plugins.Navigation.Defaults.navText = [
         '<span class="owl-nav__icon">' +
