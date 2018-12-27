@@ -30381,11 +30381,7 @@ function owlDestroy(owl) {
       items: 2,
       mouseDrag: false,
       freeDrag: false,
-      responsive: {
-        768: {
-          items: 3
-        }
-      },
+      responsive: {},
       onInitialized: function onInitialized() {
         self.find('.owl-nav').insertAfter(self);
       }
@@ -30559,7 +30555,18 @@ $('.js-location-btn').each(function () {
 (function ($) {
   var slider = $('.js-slider-main');
 
+  function setHeight() {
+    var height = window.innerHeight - $('.js-main-header').height();
+    slider.find('.c-slider-main__item').each(function () {
+      $(this).css('min-height', height);
+    });
+  }
+
   if (slider.children().length > 0) {
+    setHeight();
+    $(window).on('resize', function () {
+      setHeight();
+    });
     slider.addClass('owl-carousel').owlCarousel({
       items: 1,
       dots: true,
