@@ -30404,6 +30404,9 @@ function owlDestroy(owl) {
       responsive: {
         768: {
           items: 3
+        },
+        1440: {
+          items: 4
         }
       },
       onInitialized: function onInitialized() {
@@ -30455,6 +30458,9 @@ function owlDestroy(owl) {
         },
         1024: {
           items: 4
+        },
+        1440: {
+          items: 5
         }
       },
       onInitialized: function onInitialized() {

@@ -5768,12 +5768,15 @@ ul.c-list {
 .c-section-catalog {
   padding: 60px 0;
   background: #e6e6e6 url("../images/bg-catalog.jpg") left bottom no-repeat; }
-  .c-section-catalog .c-section-catalog__list .l-row {
-    margin-left: -5px;
-    margin-right: -5px; }
-    .c-section-catalog .c-section-catalog__list .l-row [class^="l-col"] {
-      padding-left: 5px;
-      padding-right: 5px; }
+  .c-section-catalog .c-section-catalog__list {
+    max-width: 900px;
+    margin: 0 auto; }
+    .c-section-catalog .c-section-catalog__list .l-row {
+      margin-left: -5px;
+      margin-right: -5px; }
+      .c-section-catalog .c-section-catalog__list .l-row [class^="l-col"] {
+        padding-left: 5px;
+        padding-right: 5px; }
 
 .c-section-about {
   margin: 40px 0; }
