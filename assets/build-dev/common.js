@@ -23652,6 +23652,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svg4everybody */ "../../../node_modules/svg4everybody/dist/svg4everybody.js");
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg4everybody__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app */ "./common/app.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./common/header.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _read_more__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./read-more */ "./common/read-more.js");
+
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -23783,18 +23788,21 @@ function () {
       dropdownBtn: '<svg class="c-icon c-icon-svg c-icon-svg-arrow-right">' + '<use xlink:href="/assets/images/icons.svg#arrow-right"></use></svg>',
       closeBtn: '<svg class="c-icon c-icon-svg c-icon-svg-close">' + '<use xlink:href="/assets/images/icons.svg#close"></use></svg>',
       backBtn: '<svg class="c-icon c-icon-svg c-icon-svg-arrow-left">' + '<use xlink:href="/assets/images/icons.svg#arrow-left"></use></svg>',
-      onOpen: function onOpen() {
-        return false;
-      },
-      onClose: function onClose() {
-        return false;
-      }
+      footerHtml: null
     }, options);
     this.data = data;
     this.active = false;
     this.current = [];
     this.menu = this.createMenu();
     this.overlay = this.makeOverlay();
+
+    this.onOpen = function () {
+      return false;
+    };
+
+    this.onClose = function () {
+      return false;
+    };
   }
 
   _createClass(MenuApp, [{
@@ -23875,18 +23883,21 @@ function () {
     key: "render",
     value: function render(title, menu) {
       var head = '';
+      var footer = this.options.footerHtml ? this.options.footerHtml : '';
       var back = "<button class=\"c-menu-app__back\" \n                    data-action=\"back\">".concat(this.options.backBtn, "</button>");
       var body = "<div class=\"c-menu-app__body\"><div class=\"c-menu-app__nav\">".concat(menu, "</div></div>");
       var close = "<div class=\"c-menu-app__aside\">\n                    <button class=\"c-menu-app__close\"\n                     data-action=\"close\">".concat(this.options.closeBtn, "</button></div>");
 
+      if (footer) {
+        footer = "<div class=\"c-menu-app__footer\">".concat(footer, "</div>");
+      }
+
       if (this.current.length) {
         this.menu.classList.add('child-opened');
         head = "<div class=\"c-menu-app__head\">".concat(back, "\n                    <div class=\"c-menu-app__title\" \n                    data-action=\"back\">").concat(title || this.options.title, "</div></div>");
-      } else {
-        this.menu.classList.remove('child-opened');
       }
 
-      return "".concat(head).concat(body).concat(close);
+      return "<div class=\"c-menu-app__inner\">".concat(head).concat(body).concat(footer).concat(close, "</div>");
     }
   }, {
     key: "makeOverlay",
@@ -23914,7 +23925,7 @@ function () {
       this.overlay.style.display = 'block';
       document.body.style.overflow = 'hidden';
       if (callback && typeof callback === 'function') callback(this.menu);
-      if (typeof this.options.onOpen === 'function') this.options.onOpen(this.menu);
+      if (typeof this.onOpen === 'function') this.onOpen(this.menu);
       return this.menu;
     }
   }, {
@@ -23927,7 +23938,7 @@ function () {
       this.overlay.style.display = 'none';
       document.body.style.overflow = '';
       if (callback && typeof callback === 'function') callback(this.menu);
-      if (typeof this.options.onClose === 'function') this.options.onClose(this.menu);
+      if (typeof this.onClose === 'function') this.onClose(this.menu);
       return this.menu;
     }
   }, {
@@ -24087,6 +24098,125 @@ function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (Popup);
+
+/***/ }),
+
+/***/ "./common/classes/class-read-more.js":
+/*!*******************************************!*\
+  !*** ./common/classes/class-read-more.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * @public { open }
+ * @public { close }
+ * @public { disable }
+ * @public { enable }
+ */
+var ReadMore =
+/*#__PURE__*/
+function () {
+  function ReadMore(node, options) {
+    var _this = this;
+
+    _classCallCheck(this, ReadMore);
+
+    if (!node) {
+      return new Error(_typeof(node));
+    }
+
+    this.isExpanded = true;
+    this.options = _extends({
+      textMore: 'Читать полностью',
+      textLess: 'Свернуть'
+    }, options);
+    this.content = node;
+    this.wrapper = this.makeWrapper();
+    this.footer = this.makeFooter();
+    this.toggle = this.makeToggle();
+    this.content.parentNode.insertBefore(this.wrapper, this.content);
+    this.wrapper.appendChild(this.content);
+
+    this.toggle.onclick = function (event) {
+      if (_this.isExpanded) _this.close();else _this.open();
+      event.preventDefault();
+    };
+  }
+
+  _createClass(ReadMore, [{
+    key: "makeToggle",
+    value: function makeToggle() {
+      var toggle = document.createElement('button');
+      toggle.className = 'c-read-more__btn';
+      toggle.innerText = this.options.textMore;
+      toggle.style.display = 'none';
+      return toggle;
+    }
+  }, {
+    key: "makeWrapper",
+    value: function makeWrapper() {
+      var wrapper = document.createElement('div');
+      wrapper.className = 'c-read-more';
+      return wrapper;
+    }
+  }, {
+    key: "makeFooter",
+    value: function makeFooter() {
+      var footer = document.createElement('div');
+      footer.className = 'c-read-more__footer';
+      return footer;
+    }
+  }, {
+    key: "open",
+    value: function open() {
+      this.content.style.display = '';
+      this.toggle.innerText = this.options.textLess;
+      this.toggle.classList.add('is-active');
+      this.wrapper.classList.add('is-active');
+      this.isExpanded = true;
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.content.style.display = 'none';
+      this.toggle.innerText = this.options.textMore;
+      this.toggle.classList.remove('is-active');
+      this.wrapper.classList.remove('is-active');
+      this.isExpanded = false;
+    }
+  }, {
+    key: "disable",
+    value: function disable() {
+      this.open();
+      if (this.footer.parentNode) this.footer.parentNode.removeChild(this.footer);
+    }
+  }, {
+    key: "enable",
+    value: function enable() {
+      this.close();
+      this.toggle.style.display = '';
+      this.footer.appendChild(this.toggle);
+      this.wrapper.appendChild(this.footer);
+    }
+  }]);
+
+  return ReadMore;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (ReadMore);
 
 /***/ }),
 
@@ -24498,6 +24628,29 @@ function formSuccess(data) {
 
 /***/ }),
 
+/***/ "./common/header.js":
+/*!**************************!*\
+  !*** ./common/header.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(jQuery) {(function ($) {
+  var self = $('.js-header-user');
+  $(window).on('click touchstart', function () {
+    self.removeClass('is-expanded');
+  });
+  self.on('click touchstart', function (event) {
+    event.stopPropagation();
+  }).on('click touchstart', '[data-toggle]', function (event) {
+    self.toggleClass('is-expanded');
+    event.preventDefault();
+  });
+})(jQuery);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./common/jquery-plugins/ui-select.js":
 /*!********************************************!*\
   !*** ./common/jquery-plugins/ui-select.js ***!
@@ -24811,13 +24964,26 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
   var menuMobile = new _classes_class_menu_app__WEBPACK_IMPORTED_MODULE_1__["default"](createData(dataRoots), {
     title: 'Меню',
-    onOpen: function onOpen() {
-      if (toggle) toggle.classList.add('is-active');
-    },
-    onClose: function onClose() {
-      if (toggle) toggle.classList.remove('is-active');
-    }
+    footerHtml: function () {
+      var btn = document.getElementById('js-btn-activate');
+
+      if (btn) {
+        var newBtn = btn.cloneNode(true);
+        newBtn.dataset.action = 'close';
+        return newBtn.outerHTML;
+      }
+
+      return '';
+    }()
   });
+
+  menuMobile.onOpen = function () {
+    if (toggle) toggle.classList.add('is-active');
+  };
+
+  menuMobile.onClose = function () {
+    if (toggle) toggle.classList.remove('is-active');
+  };
 
   if (toggle) {
     toggle.onclick = function (event) {
@@ -24831,9 +24997,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     };
   }
 
-  _app__WEBPACK_IMPORTED_MODULE_0__["default"].breakpoints.onBreakpoint('xxs xs sm', function () {
+  _app__WEBPACK_IMPORTED_MODULE_0__["default"].breakpoints.onBreakpoint('xxs xs sm md', function () {
     document.body.appendChild(menuMobile.menu);
-    if (menuMobile && menuMobile.open) menuMobile.open();
+    document.body.appendChild(menuMobile.overlay);
   }, function () {
     if (menuMobile && menuMobile.close) menuMobile.close();
   });
@@ -24889,6 +25055,57 @@ if (typeof $.fn.owlCarousel === 'function') {
   $.fn.owlCarousel.Constructor.Plugins.Navigation.Defaults.navText = ['<svg class="c-icon c-icon-svg c-icon-svg-arrow-left">' + '<use xlink:href="/assets/images/icons.svg#arrow-left"></use></svg>', '<svg class="c-icon c-icon-svg c-icon-svg-arrow-right">' + '<use xlink:href="/assets/images/icons.svg#arrow-right"></use></svg>'];
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./common/read-more.js":
+/*!*****************************!*\
+  !*** ./common/read-more.js ***!
+  \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ "./common/app.js");
+/* harmony import */ var _classes_class_read_more__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/class-read-more */ "./common/classes/class-read-more.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+
+
+
+(function () {
+  var nodes = document.querySelectorAll('.js-read-more');
+  if (!nodes) return false;
+
+  var items = _toConsumableArray(nodes).map(function (node) {
+    return new _classes_class_read_more__WEBPACK_IMPORTED_MODULE_1__["default"](node, {
+      textMore: 'Показать еще',
+      textLess: 'Свернуть'
+    });
+  });
+
+  _app__WEBPACK_IMPORTED_MODULE_0__["default"].breakpoints.onBreakpoint('xxs xs', function () {
+    if (items) {
+      items.forEach(function (item) {
+        if (item.enable) item.enable();
+      });
+    }
+  }, function () {
+    if (items) {
+      items.forEach(function (item) {
+        if (item.disable) item.disable();
+      });
+    }
+  });
+  return items;
+})();
 
 /***/ }),
 

@@ -164,9 +164,8 @@ window["index"] =
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(jQuery) {/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ "./common/app.js");
-/* harmony import */ var _lazy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lazy */ "./common/lazy.js");
-/* harmony import */ var _owl_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./owl-carousel */ "./common/owl-carousel.js");
+/* WEBPACK VAR INJECTION */(function(jQuery) {/* harmony import */ var _lazy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lazy */ "./common/lazy.js");
+/* harmony import */ var _owl_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./owl-carousel */ "./common/owl-carousel.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -178,35 +177,34 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 
-
 (function ($) {
   var slider = document.getElementById('js-slider-main');
 
-  function initSlider() {
-    if (slider && slider.children.length > 1) {
-      $(slider).addClass('owl-carousel').owlCarousel({
-        items: 1,
-        nav: true,
-        loop: true,
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        lazyLoad: true,
-        onInitialized: function onInitialized() {
-          var cloned = slider.querySelectorAll('.owl-item.cloned .js-lazy-img');
+  if (slider && slider.children.length > 1) {
+    $(slider).addClass('owl-carousel').owlCarousel({
+      items: 1,
+      nav: false,
+      loop: true,
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      lazyLoad: true,
+      onInitialized: function onInitialized() {
+        var cloned = slider.querySelectorAll('.owl-item.cloned .js-lazy-img');
 
-          _toConsumableArray(cloned).forEach(function (item) {
-            return _lazy__WEBPACK_IMPORTED_MODULE_1__["default"].observe(item);
-          });
+        _toConsumableArray(cloned).forEach(function (item) {
+          return _lazy__WEBPACK_IMPORTED_MODULE_0__["default"].observe(item);
+        });
+      },
+      responsive: {
+        768: {
+          dots: false,
+          nav: true
         }
-      });
-    }
+      }
+    });
   }
-
-  _app__WEBPACK_IMPORTED_MODULE_0__["default"].breakpoints.onBreakpoint('xxs xs sm', false, function () {
-    initSlider();
-  });
 })(jQuery);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
 
