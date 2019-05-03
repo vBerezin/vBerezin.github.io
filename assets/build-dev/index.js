@@ -62,6 +62,11 @@ window["index"] =
 /******/
 /******/ 	var deferredModules = [];
 /******/
+/******/ 	// script path function
+/******/ 	function jsonpScriptSrc(chunkId) {
+/******/ 		return __webpack_require__.p + "" + ({"initMask":"initMask","input-file":"input-file","menu-app":"menu-app","photoSwipe":"photoSwipe","tabs":"tabs","textarea":"textarea"}[chunkId]||chunkId) + ".js"
+/******/ 	}
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
@@ -86,6 +91,64 @@ window["index"] =
 /******/ 		return module.exports;
 /******/ 	}
 /******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		var promises = [];
+/******/
+/******/
+/******/ 		// JSONP chunk loading for javascript
+/******/
+/******/ 		var installedChunkData = installedChunks[chunkId];
+/******/ 		if(installedChunkData !== 0) { // 0 means "already installed".
+/******/
+/******/ 			// a Promise means "currently loading".
+/******/ 			if(installedChunkData) {
+/******/ 				promises.push(installedChunkData[2]);
+/******/ 			} else {
+/******/ 				// setup Promise in chunk cache
+/******/ 				var promise = new Promise(function(resolve, reject) {
+/******/ 					installedChunkData = installedChunks[chunkId] = [resolve, reject];
+/******/ 				});
+/******/ 				promises.push(installedChunkData[2] = promise);
+/******/
+/******/ 				// start chunk loading
+/******/ 				var script = document.createElement('script');
+/******/ 				var onScriptComplete;
+/******/
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.src = jsonpScriptSrc(chunkId);
+/******/
+/******/ 				onScriptComplete = function (event) {
+/******/ 					// avoid mem leaks in IE.
+/******/ 					script.onerror = script.onload = null;
+/******/ 					clearTimeout(timeout);
+/******/ 					var chunk = installedChunks[chunkId];
+/******/ 					if(chunk !== 0) {
+/******/ 						if(chunk) {
+/******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 							var realSrc = event && event.target && event.target.src;
+/******/ 							var error = new Error('Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')');
+/******/ 							error.type = errorType;
+/******/ 							error.request = realSrc;
+/******/ 							chunk[1](error);
+/******/ 						}
+/******/ 						installedChunks[chunkId] = undefined;
+/******/ 					}
+/******/ 				};
+/******/ 				var timeout = setTimeout(function(){
+/******/ 					onScriptComplete({ type: 'timeout', target: script });
+/******/ 				}, 120000);
+/******/ 				script.onerror = script.onload = onScriptComplete;
+/******/ 				document.head.appendChild(script);
+/******/ 			}
+/******/ 		}
+/******/ 		return Promise.all(promises);
+/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -139,6 +202,9 @@ window["index"] =
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/assets/build-dev/";
 /******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/
 /******/ 	var jsonpArray = window["webpackJsonp_name_"] = window["webpackJsonp_name_"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
 /******/ 	jsonpArray.push = webpackJsonpCallback;
@@ -155,6 +221,26 @@ window["index"] =
 /************************************************************************/
 /******/ ({
 
+/***/ "./common/owl-carousel.js":
+/*!********************************!*\
+  !*** ./common/owl-carousel.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! owl.carousel */ "../../../node_modules/owl.carousel/dist/owl.carousel.js");
+/* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(owl_carousel__WEBPACK_IMPORTED_MODULE_0__);
+
+
+if (typeof $.fn.owlCarousel === 'function') {
+  $.fn.owlCarousel.Constructor.Plugins.Navigation.Defaults.navText = ['<svg class="c-icon c-icon-svg c-icon-svg-left"><use xlink:href="/assets/images/icons.svg#left"></use></svg>', '<svg class="c-icon c-icon-svg c-icon-svg-right"><use xlink:href="/assets/images/icons.svg#right"></use></svg>'];
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./common/sections.js":
 /*!****************************!*\
   !*** ./common/sections.js ***!
@@ -164,8 +250,121 @@ window["index"] =
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(jQuery) {/* harmony import */ var _lazy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lazy */ "./common/lazy.js");
-/* harmony import */ var _owl_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./owl-carousel */ "./common/owl-carousel.js");
+/* harmony import */ var _sections_works__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sections/works */ "./common/sections/works.js");
+/* harmony import */ var _sections_partners__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sections/partners */ "./common/sections/partners.js");
+/* harmony import */ var _sections_reviews__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sections/reviews */ "./common/sections/reviews.js");
+
+
+
+
+/***/ }),
+
+/***/ "./common/sections/partners.js":
+/*!*************************************!*\
+  !*** ./common/sections/partners.js ***!
+  \*************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _owl_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../owl-carousel */ "./common/owl-carousel.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+
+
+(function () {
+  var section = document.querySelector('.js-section-partners');
+  if (!section) return false;
+  var slider = section.querySelector('[data-action="partners.slider"]');
+  var nav = section.querySelector('[data-action="partners.nav"]');
+  var btns = nav.querySelectorAll('button');
+  $(slider).addClass('owl-carousel').owlCarousel({
+    items: 3,
+    margin: 0,
+    loop: false,
+    nav: false,
+    dots: false,
+    onInitialized: function onInitialized() {
+      nav.style.display = '';
+
+      _toConsumableArray(btns).forEach(function (node) {
+        var btn = node;
+        var action = btn.dataset.action;
+
+        btn.onclick = function (event) {
+          $(slider).trigger("".concat(action, ".owl.carousel"));
+          event.preventDefault();
+        };
+      });
+    }
+  });
+  return section;
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./common/sections/reviews.js":
+/*!************************************!*\
+  !*** ./common/sections/reviews.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _owl_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../owl-carousel */ "./common/owl-carousel.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+
+
+(function () {
+  var items = document.querySelectorAll('.js-item-review');
+  if (!items) return false;
+
+  function init(item) {
+    var btn = item.querySelector('[data-action="review.more"]');
+
+    btn.onclick = function (event) {
+      item.classList.toggle('is-expanded');
+      event.preventDefault();
+      btn.parentNode.removeChild(btn);
+    };
+  }
+
+  _toConsumableArray(items).forEach(function (item) {
+    return init(item);
+  });
+
+  return items;
+})();
+
+/***/ }),
+
+/***/ "./common/sections/works.js":
+/*!**********************************!*\
+  !*** ./common/sections/works.js ***!
+  \**********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app */ "./common/app.js");
+/* harmony import */ var _owl_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../owl-carousel */ "./common/owl-carousel.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -177,35 +376,168 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 
-(function ($) {
-  var slider = document.getElementById('js-slider-main');
+(function () {
+  var section = document.querySelector('.js-section-works');
+  if (!section) return false;
+  var current = 0;
+  var items = section.querySelectorAll('.js-works-item');
+  var slider = section.querySelector('[data-action="works.slider"]');
+  var slides = slider.children;
+  var btnPrev = section.querySelector('[data-action="works.slider.prev"]');
+  var btnNext = section.querySelector('[data-action="works.slider.next"]');
 
-  if (slider && slider.children.length > 1) {
-    $(slider).addClass('owl-carousel').owlCarousel({
-      items: 1,
-      nav: false,
-      loop: true,
-      dots: true,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      autoplayHoverPause: true,
-      lazyLoad: true,
-      onInitialized: function onInitialized() {
-        var cloned = slider.querySelectorAll('.owl-item.cloned .js-lazy-img');
+  function thumbsCrop(thumbsOuter, gallery) {
+    var button = document.createElement('button');
+    button.dataset.action = 'item.thumbs.more';
+    button.style.display = 'none';
+    thumbsOuter.parentNode.appendChild(button);
+    var thumbs = thumbsOuter.children;
 
-        _toConsumableArray(cloned).forEach(function (item) {
-          return _lazy__WEBPACK_IMPORTED_MODULE_0__["default"].observe(item);
-        });
-      },
-      responsive: {
-        768: {
-          dots: false,
-          nav: true
+    button.onclick = function (event) {
+      gallery.querySelector('.owl-item.active [data-size]').click();
+      event.preventDefault();
+    };
+
+    function update() {
+      var itemsWidth = 0;
+      var hiddenCount = 0;
+
+      _toConsumableArray(thumbs).forEach(function (node) {
+        var item = node;
+        item.style.display = '';
+        itemsWidth += item.offsetWidth + parseInt(getComputedStyle(item).marginRight, 10);
+
+        if (itemsWidth > thumbsOuter.offsetWidth) {
+          item.style.display = 'none';
+          hiddenCount += 1;
+        } else {
+          item.style.display = '';
         }
+      });
+
+      if (hiddenCount) {
+        button.style.display = '';
+        button.innerText = "+".concat(hiddenCount);
+      } else {
+        button.style.display = 'none';
+      }
+    }
+
+    return update;
+  }
+
+  function setSlide(index) {
+    if (slides[index]) {
+      current = index;
+
+      _toConsumableArray(slides).forEach(function (node, i) {
+        var item = node;
+
+        if (index === i) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      btnPrev.classList.remove('is-disabled');
+      btnPrev.disabled = false;
+      btnNext.classList.remove('is-disabled');
+      btnNext.disabled = false;
+
+      if (current === 0) {
+        btnPrev.classList.add('is-disabled');
+        btnPrev.disabled = true;
+      }
+
+      if (current === slides.length - 1) {
+        btnNext.classList.add('is-disabled');
+        btnNext.disabled = true;
+      }
+    }
+
+    if (items[index]) items[index].updateThumbs();
+  }
+
+  function init(item) {
+    var gallery = item.querySelector('[data-action="item.slider"]');
+    var thumbs = item.querySelector('[data-action="item.thumbs"]');
+    __webpack_require__.e(/*! import() | photoSwipe */ "photoSwipe").then(__webpack_require__.bind(null, /*! ../jquery-plugins/photoswipe */ "./common/jquery-plugins/photoswipe.js")).then(function (module) {
+      var photoSwipe = module.default;
+      photoSwipe.init(gallery);
+      return photoSwipe;
+    }).catch(function (error) {
+      return error;
+    });
+
+    function setThumb(pos) {
+      _toConsumableArray(thumbs.children).forEach(function (node, index) {
+        if (index === pos) {
+          node.classList.add('is-active');
+        } else {
+          node.classList.remove('is-active');
+        }
+      });
+    }
+
+    $(gallery).addClass('owl-carousel').owlCarousel({
+      items: 1,
+      loop: false,
+      nav: false,
+      dots: false,
+      onInitialized: function onInitialized(event) {
+        setThumb(event.item.index);
+      },
+      onTranslated: function onTranslated(event) {
+        setThumb(event.item.index);
       }
     });
+
+    _toConsumableArray(thumbs.children).forEach(function (node, index) {
+      var thumb = node;
+
+      thumb.onclick = function (event) {
+        event.preventDefault();
+        $(gallery).trigger('to.owl.carousel', index);
+      };
+    });
+
+    return {
+      updateThumbs: thumbsCrop(thumbs, gallery)
+    };
   }
-})(jQuery);
+
+  var actions = {
+    'works.slider.next': function worksSliderNext() {
+      var target = Math.min(current + 1, slides.length);
+      setSlide(target);
+    },
+    'works.slider.prev': function worksSliderPrev() {
+      var target = Math.max(current - 1, 0);
+      setSlide(target);
+    }
+  };
+  [btnPrev, btnNext].forEach(function (node) {
+    var btn = node;
+
+    btn.onclick = function (event) {
+      var action = btn.dataset.action;
+
+      if (actions[action]) {
+        actions[action]();
+        event.preventDefault();
+      }
+    };
+  });
+  items = _toConsumableArray(items).map(function (item) {
+    return init(item);
+  });
+  setSlide(current);
+  _app__WEBPACK_IMPORTED_MODULE_0__["default"].breakpoints.onChange(function () {
+    if (items[current]) items[current].updateThumbs();
+  });
+  return section;
+})();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -221,9 +553,15 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common/base */ "./common/base.js");
 /* harmony import */ var _common_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common/forms */ "./common/forms.js");
-/* harmony import */ var _common_lazy__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./common/lazy */ "./common/lazy.js");
-/* harmony import */ var _common_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./common/menu */ "./common/menu.js");
-/* harmony import */ var _common_sections__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./common/sections */ "./common/sections.js");
+/* harmony import */ var _common_scroll_top__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./common/scroll-top */ "./common/scroll-top.js");
+/* harmony import */ var _common_lazy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./common/lazy */ "./common/lazy.js");
+/* harmony import */ var _common_seo_goals__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./common/seo-goals */ "./common/seo-goals.js");
+/* harmony import */ var _common_menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./common/menu */ "./common/menu.js");
+/* harmony import */ var _common_sections__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./common/sections */ "./common/sections.js");
+/* harmony import */ var _common_maps__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./common/maps */ "./common/maps.js");
+
+
+
 
 
 
