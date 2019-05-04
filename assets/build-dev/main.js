@@ -64,7 +64,7 @@ window["main"] =
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"initMask":"initMask","input-file":"input-file","menu-app":"menu-app","photoSwipe":"photoSwipe","tabs":"tabs","textarea":"textarea"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"initMask":"initMask","input-file":"input-file","photoSwipe":"photoSwipe","tabs":"tabs","textarea":"textarea"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -221,124 +221,6 @@ window["main"] =
 /************************************************************************/
 /******/ ({
 
-/***/ "./common/components/print.js":
-/*!************************************!*\
-  !*** ./common/components/print.js ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var print = function print(html) {
-  var printWindow = window.open();
-  printWindow.document.write(html);
-  printWindow.location.reload();
-  printWindow.focus();
-  printWindow.print();
-  printWindow.close();
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (print);
-
-/***/ }),
-
-/***/ "./common/components/table-wrapper.js":
-/*!********************************************!*\
-  !*** ./common/components/table-wrapper.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var tableWrapper = function tableWrapper(table) {
-  var timer;
-  var wrapper = document.createElement('div');
-  wrapper.className = 'c-table-wrapper';
-
-  if (table.parentNode) {
-    table.parentNode.insertBefore(wrapper, table.nextSibling);
-  }
-
-  wrapper.appendChild(table);
-
-  var handler = function handler() {
-    clearTimeout(timer);
-    timer = setTimeout(function () {
-      if (table.offsetWidth > wrapper.offsetWidth) {
-        wrapper.classList.add('is-active');
-      } else {
-        wrapper.classList.remove('is-active');
-      }
-    }, 500);
-  };
-
-  document.addEventListener('DOMContentLoaded', handler);
-  window.addEventListener('resize', handler);
-  window.addEventListener('load', handler);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (tableWrapper);
-
-/***/ }),
-
-/***/ "./common/print.js":
-/*!*************************!*\
-  !*** ./common/print.js ***!
-  \*************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _components_print__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/print */ "./common/components/print.js");
-
-/**
- * @description фильтруем html и печатаем
- * */
-
-$('.js-print').on('click', function (event) {
-  var html = $('#print-area').clone();
-  html.find('.no-print, .c-icon, iframe').each(function () {
-    $(this).remove();
-  });
-  Object(_components_print__WEBPACK_IMPORTED_MODULE_0__["default"])(html.html());
-  event.preventDefault();
-});
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
-
-/***/ }),
-
-/***/ "./common/tables.js":
-/*!**************************!*\
-  !*** ./common/tables.js ***!
-  \**************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_table_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/table-wrapper */ "./common/components/table-wrapper.js");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-
-var tables = document.getElementsByTagName('table');
-
-if (tables && tables.length) {
-  _toConsumableArray(tables).forEach(function (table) {
-    return Object(_components_table_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(table);
-  });
-}
-
-/***/ }),
-
 /***/ "./main.js":
 /*!*****************!*\
   !*** ./main.js ***!
@@ -349,22 +231,6 @@ if (tables && tables.length) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common/base */ "./common/base.js");
-/* harmony import */ var _common_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common/forms */ "./common/forms.js");
-/* harmony import */ var _common_scroll_top__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./common/scroll-top */ "./common/scroll-top.js");
-/* harmony import */ var _common_lazy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./common/lazy */ "./common/lazy.js");
-/* harmony import */ var _common_seo_goals__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./common/seo-goals */ "./common/seo-goals.js");
-/* harmony import */ var _common_menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./common/menu */ "./common/menu.js");
-/* harmony import */ var _common_print__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./common/print */ "./common/print.js");
-/* harmony import */ var _common_maps__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./common/maps */ "./common/maps.js");
-/* harmony import */ var _common_tables__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./common/tables */ "./common/tables.js");
-
-
-
-
-
-
-
-
 
 
 /***/ }),
