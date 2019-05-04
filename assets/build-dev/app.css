@@ -5997,6 +5997,9 @@ ul.c-list {
         .c-aside .c-aside__toggle .c-icon {
           right: 15px;
           top: 15px; } }
+    @media (min-width: 769px) {
+      .c-aside .c-aside__toggle {
+        display: none; } }
     @media (min-width: 551px) {
       .c-aside .c-aside__toggle:hover {
         color: #48A5B4; } }
