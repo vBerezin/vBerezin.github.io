@@ -64,7 +64,7 @@ window["index"] =
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"initMask":"initMask","input-file":"input-file","photoSwipe":"photoSwipe","tabs":"tabs","textarea":"textarea"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"initMask":"initMask","input-file":"input-file","menu-app":"menu-app","photoSwipe":"photoSwipe","tabs":"tabs","textarea":"textarea"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
