@@ -23755,7 +23755,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _maps__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./maps */ "./common/maps.js");
 /* harmony import */ var _popups__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./popups */ "./common/popups.js");
 /* harmony import */ var _scroll_top__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./scroll-top */ "./common/scroll-top.js");
-/* harmony import */ var _product_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./product-card */ "./common/product-card.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -23763,7 +23762,6 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
 
 
 
@@ -23821,6 +23819,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 })();
+
+__webpack_require__.e(/*! import() | prouctGallery */ "prouctGallery").then(__webpack_require__.bind(null, /*! ./product-card */ "./common/product-card.js")).then(function (module) {
+  var prouctGallery = module.default;
+  _app__WEBPACK_IMPORTED_MODULE_1__["default"].stream.add(prouctGallery);
+  return prouctGallery;
+}).catch(function (error) {
+  return error;
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -24997,86 +25003,6 @@ $(document).on('click contextmenu', '.js-ajax-popup', function (event) {
     btn.classList.remove('is-disabled', 'is-loading');
   }).fail(_app__WEBPACK_IMPORTED_MODULE_1__["default"].onAjaxFail);
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
-
-/***/ }),
-
-/***/ "./common/product-card.js":
-/*!********************************!*\
-  !*** ./common/product-card.js ***!
-  \********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(jQuery) {/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ "./common/app.js");
-/* harmony import */ var _jquery_plugins_owl_destroy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./jquery-plugins/owl-destroy */ "./common/jquery-plugins/owl-destroy.js");
-
-
-
-(function ($) {
-  function prouctGallery(context) {
-    var slider = $(context).find('[data-action="product.slider"]');
-    var thumbs = $(context).find('[data-action="product.thumbs"]');
-    var thumbsHover = false;
-
-    function setThumb(index) {
-      thumbs.find('[data-index]').removeClass('is-active');
-      thumbs.find("[data-index=".concat(index, "]")).addClass('is-active');
-
-      if (!thumbsHover) {
-        thumbs.trigger('to.owl.carousel', index);
-      }
-    }
-
-    if (slider.children().length > 1) {
-      _app__WEBPACK_IMPORTED_MODULE_0__["default"].breakpoints.onBreakpoint('xxs xs', function () {
-        thumbs.hide(0);
-        Object(_jquery_plugins_owl_destroy__WEBPACK_IMPORTED_MODULE_1__["default"])(slider);
-      }, function () {
-        slider.addClass('owl-carousel').owlCarousel({
-          items: 1,
-          dots: false,
-          loop: false,
-          nav: true,
-          onInitialized: function onInitialized(event) {
-            setThumb(event.item.index);
-          },
-          onTranslated: function onTranslated(event) {
-            setThumb(event.item.index);
-          },
-          responsive: {
-            550: {
-              nav: false
-            }
-          }
-        });
-        thumbs.show(0);
-        thumbs.addClass('owl-carousel').owlCarousel({
-          nav: true,
-          dots: false,
-          loop: false,
-          items: 4,
-          margin: 20,
-          autoWidth: true
-        });
-        thumbs.on('click', '[data-index]', function (event) {
-          slider.trigger('to.owl.carousel', +$(this).data('index'));
-          event.preventDefault();
-        }).on('mouseenter', function () {
-          thumbsHover = true;
-        }).on('mouseleave', function () {
-          thumbsHover = false;
-        });
-      });
-    } else {
-      thumbs.remove();
-    }
-  }
-
-  _app__WEBPACK_IMPORTED_MODULE_0__["default"].stream.add(prouctGallery);
-})(jQuery);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../../../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
