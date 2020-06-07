@@ -1013,7 +1013,9 @@ img,
   margin-right: -15px;
   scroll-padding: 15px;
   padding: 5px 15px 20px 15px;
-  -webkit-overflow-scrolling: auto; }
+  -webkit-overflow-scrolling: touch; }
+  .section-products__list::-webkit-scrollbar {
+    -webkit-appearance: none; }
   .section-products__list::-webkit-scrollbar, .section-products__list::-webkit-scrollbar-track, .section-products__list::-webkit-scrollbar-thumb {
     border-radius: 3px;
     height: 6px; }
