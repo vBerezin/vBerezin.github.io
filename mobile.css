@@ -959,18 +959,7 @@ img,
     transform: translateX(0); } }
 
 .menu-sticky {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #F4F4F4;
-  z-index: 100;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-out;
-  animation-name: menu-sticky; }
-  .menu-sticky.is-active {
-    display: block; }
+  min-height: 50px; }
   .menu-sticky ul {
     display: flex;
     align-items: stretch;
@@ -983,6 +972,11 @@ img,
     flex: 1 1 auto;
     padding: 1px;
     margin: 0; }
+  .menu-sticky__sticky {
+    background: #F4F4F4;
+    z-index: 100;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out; }
   .menu-sticky__item {
     display: flex;
     flex-direction: column;
@@ -1009,6 +1003,12 @@ img,
       background: #312E76; }
       .menu-sticky__item:active .menu-sticky__item__icon, .menu-sticky__item.is-active .menu-sticky__item__icon {
         color: currentColor; }
+  .menu-sticky.menu-sticky--active .menu-sticky__sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    animation-name: menu-sticky; }
 
 .grid-catalog {
   display: grid;

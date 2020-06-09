@@ -14763,6 +14763,9 @@ var Header = function () {
   var current = null;
 
   function callback(state) {
+    document.body.style.overflow = state ? 'hidden' : '';
+    header.style.minHeight = state ? "".concat(header.offsetHeight, "px") : '';
+
     if (state && current) {
       current.close();
     }
@@ -14770,7 +14773,6 @@ var Header = function () {
     _blocks_mobile_menu_sticky__WEBPACK_IMPORTED_MODULE_1__["MenuSticky"].active = !state;
     toggle.active = state;
     current = state ? this : null;
-    document.body.style.overflow = state ? 'hidden' : '';
   }
 
   var menu = new _scripts_header_menu__WEBPACK_IMPORTED_MODULE_2__["HeaderMenu"](header, callback);
@@ -15064,24 +15066,10 @@ var Menu = /*#__PURE__*/function () {
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Menu, [{
-    key: "close",
-    value: function close() {
-      this.active = false;
-    }
-  }, {
-    key: "open",
-    value: function open() {
-      this.active = true;
-    }
-  }, {
-    key: "toggle",
-    value: function toggle() {
-      this.active = !_babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _active);
-    }
-  }, {
     key: "active",
     set: function set(state) {
-      this.el.classList.toggle('is-active', state);
+      this.el.style.minHeight = state ? "".concat(this.el.offsetHeight, "px") : '';
+      this.el.classList.toggle('menu-sticky--active', state);
 
       _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default()(this, _active, state);
     },
@@ -15111,7 +15099,7 @@ var MenuSticky = function () {
     }
   });
   node.addEventListener('click', handler);
-  menu.open();
+  menu.active = true;
   return menu;
 }();
 
