@@ -14639,63 +14639,99 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _blocks_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~blocks/icon */ "./blocks/icon/index.js");
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldSet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldSet.js");
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _blocks_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~blocks/icon */ "./blocks/icon/index.js");
 
+
+
+
+function _classPrivateMethodGet(receiver, privateSet, fn) { if (!privateSet.has(receiver)) { throw new TypeError("attempted to get private field on non-instance"); } return fn; }
 
 
 var MenuApp = /*#__PURE__*/function () {
   function MenuApp(_ref) {
     var node = _ref.node,
-        data = _ref.data;
+        _data = _ref.data;
 
     _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, MenuApp);
 
+    _makeItem.add(this);
+
+    _makeBody.add(this);
+
+    _makeHead.add(this);
+
+    _current.set(this, {
+      writable: true,
+      value: void 0
+    });
+
     this.el = node;
-    this.data = data;
-    this.render(data);
+    this.data = _data;
+
+    _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2___default()(this, _current, []);
+
+    this.render();
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(MenuApp, [{
     key: "render",
-    value: function render(data) {
-      var list = this.makeList(data);
-      this.el.innerHTML = "<ul>".concat(list, "</ul>");
-    }
-  }, {
-    key: "makeList",
-    value: function makeList(data) {
-      var _this = this;
+    value: function render() {
+      var head = _classPrivateMethodGet(this, _makeHead, _makeHead2).call(this, this.data);
 
-      return data.reduce(function (current, item) {
-        return "".concat(current, "<li>").concat(_this.makeItem(item), "</li>");
-      }, '');
-    }
-  }, {
-    key: "makeItem",
-    value: function makeItem(data) {
-      var item = document.createElement(data.href ? 'a' : 'div');
-      var icon = new _blocks_icon__WEBPACK_IMPORTED_MODULE_2__["Icon"]({
-        name: data.items ? 'sub' : 'right',
-        mods: 'center'
-      });
-      item.className = 'menu-app__item';
-      item.href = data.href;
-      if (data.active) item.classList.add('is-active');
+      var body = _classPrivateMethodGet(this, _makeBody, _makeBody2).call(this, this.data);
 
-      if (data.image) {
-        var image = document.createElement('img');
-        image.src = data.image.src;
-        item.innerHTML = "<div class=\"menu-app__item__image\">".concat(image.outerHTML, "</div>");
-      }
-
-      item.innerHTML += "<div class=\"menu-app__item__title\">".concat(data.title, "</div>");
-      item.innerHTML += "<div class=\"menu-app__item__icon\">".concat(icon.outerHTML, "</div>");
-      return item.outerHTML;
+      this.el.innerHTML = "".concat(head).concat(body);
     }
   }]);
 
   return MenuApp;
 }();
+
+var _current = new WeakMap();
+
+var _makeHead = new WeakSet();
+
+var _makeBody = new WeakSet();
+
+var _makeItem = new WeakSet();
+
+var _makeHead2 = function _makeHead2() {
+  return "<div class=\"menu-app__head\"></div>";
+};
+
+var _makeBody2 = function _makeBody2(data) {
+  var _this = this;
+
+  var items = data.reduce(function (current, item, index) {
+    return "".concat(current, "<li>").concat(_classPrivateMethodGet(_this, _makeItem, _makeItem2).call(_this, item, index), "</li>");
+  }, '');
+  return "<div class=\"menu-app__body\"><ul>".concat(items, "</ul></div>");
+};
+
+var _makeItem2 = function _makeItem2(data, index) {
+  var item = document.createElement(data.href ? 'a' : 'div');
+  var icon = new _blocks_icon__WEBPACK_IMPORTED_MODULE_3__["Icon"]({
+    name: data.items ? 'sub' : 'right',
+    mods: 'center'
+  });
+  item.className = 'menu-app__item';
+  item.dataset.index = index;
+  item.dataset.click = 'menu.app.to';
+  item.href = data.href;
+  if (data.active) item.classList.add('is-active');
+
+  if (data.image) {
+    var image = document.createElement('img');
+    image.src = data.image.src;
+    item.innerHTML = "<div class=\"menu-app__item__image\">".concat(image.outerHTML, "</div>");
+  }
+
+  item.innerHTML += "<div class=\"menu-app__item__title\">".concat(data.title, "</div>");
+  item.innerHTML += "<div class=\"menu-app__item__icon\">".concat(icon.outerHTML, "</div>");
+  return item.outerHTML;
+};
 
 /***/ }),
 
@@ -14710,9 +14746,11 @@ var MenuApp = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
 /* harmony import */ var _blocks_button_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~blocks/button-menu */ "./blocks/button-menu/index.js");
-/* harmony import */ var _scripts_header_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/header-menu */ "./blocks/mobile/header/scripts/header-menu.js");
-/* harmony import */ var _scripts_header_catalog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/header-catalog */ "./blocks/mobile/header/scripts/header-catalog.js");
-/* harmony import */ var _scripts_header_search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/header-search */ "./blocks/mobile/header/scripts/header-search.js");
+/* harmony import */ var _blocks_mobile_menu_sticky__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~blocks/mobile/menu-sticky */ "./blocks/mobile/menu-sticky/index.js");
+/* harmony import */ var _scripts_header_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/header-menu */ "./blocks/mobile/header/scripts/header-menu.js");
+/* harmony import */ var _scripts_header_catalog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/header-catalog */ "./blocks/mobile/header/scripts/header-catalog.js");
+/* harmony import */ var _scripts_header_search__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/header-search */ "./blocks/mobile/header/scripts/header-search.js");
+
 
 
 
@@ -14729,14 +14767,15 @@ var Header = function () {
       current.close();
     }
 
+    _blocks_mobile_menu_sticky__WEBPACK_IMPORTED_MODULE_1__["MenuSticky"].active = !state;
     toggle.active = state;
     current = state ? this : null;
     document.body.style.overflow = state ? 'hidden' : '';
   }
 
-  var menu = new _scripts_header_menu__WEBPACK_IMPORTED_MODULE_1__["HeaderMenu"](header, callback);
-  var catalog = new _scripts_header_catalog__WEBPACK_IMPORTED_MODULE_2__["HeaderCatalog"](header, callback);
-  var search = new _scripts_header_search__WEBPACK_IMPORTED_MODULE_3__["HeaderSearch"](header, callback);
+  var menu = new _scripts_header_menu__WEBPACK_IMPORTED_MODULE_2__["HeaderMenu"](header, callback);
+  var catalog = new _scripts_header_catalog__WEBPACK_IMPORTED_MODULE_3__["HeaderCatalog"](header, callback);
+  var search = new _scripts_header_search__WEBPACK_IMPORTED_MODULE_4__["HeaderSearch"](header, callback);
   button.addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -14987,32 +15026,94 @@ var _active = new WeakMap();
 /*!********************************************!*\
   !*** ./blocks/mobile/menu-sticky/index.js ***!
   \********************************************/
-/*! no exports provided */
+/*! exports provided: MenuSticky */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_mobile_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~blocks/mobile/header */ "./blocks/mobile/header/index.js");
-/* harmony import */ var _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~common/scripts/utils/handlers */ "./common/scripts/utils/handlers.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuSticky", function() { return MenuSticky; });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldGet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldGet.js");
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldSet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldSet.js");
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _blocks_mobile_header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~blocks/mobile/header */ "./blocks/mobile/header/index.js");
+/* harmony import */ var _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~common/scripts/utils/handlers */ "./common/scripts/utils/handlers.js");
 
 
 
-(function () {
-  var menu = document.querySelector('.js-menu-sticky');
-  var handler = new _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_1__["Handlers"].Click({
+
+
+
+
+var Menu = /*#__PURE__*/function () {
+  function Menu(node) {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Menu);
+
+    _active.set(this, {
+      writable: true,
+      value: void 0
+    });
+
+    _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default()(this, _active, false);
+
+    this.el = node;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Menu, [{
+    key: "close",
+    value: function close() {
+      this.active = false;
+    }
+  }, {
+    key: "open",
+    value: function open() {
+      this.active = true;
+    }
+  }, {
+    key: "toggle",
+    value: function toggle() {
+      this.active = !_babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _active);
+    }
+  }, {
+    key: "active",
+    set: function set(state) {
+      this.el.classList.toggle('is-active', state);
+
+      _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default()(this, _active, state);
+    },
+    get: function get() {
+      return _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _active);
+    }
+  }]);
+
+  return Menu;
+}();
+
+var _active = new WeakMap();
+
+var MenuSticky = function () {
+  var node = document.querySelector('.js-menu-sticky');
+  var menu = new Menu(node);
+  var handler = new _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_5__["Handlers"].Click({
     'search.open': function searchOpen(_ref) {
       var event = _ref.event;
-      _blocks_mobile_header__WEBPACK_IMPORTED_MODULE_0__["Header"].search.toggle();
+      _blocks_mobile_header__WEBPACK_IMPORTED_MODULE_4__["Header"].search.toggle();
       event.preventDefault();
     },
     'catalog.open': function catalogOpen(_ref2) {
       var event = _ref2.event;
-      _blocks_mobile_header__WEBPACK_IMPORTED_MODULE_0__["Header"].catalog.toggle();
+      _blocks_mobile_header__WEBPACK_IMPORTED_MODULE_4__["Header"].catalog.toggle();
       event.preventDefault();
     }
   });
-  menu.addEventListener('click', handler);
-})();
+  node.addEventListener('click', handler);
+  menu.open();
+  return menu;
+}();
 
 /***/ }),
 
