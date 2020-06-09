@@ -15121,6 +15121,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function () {
   var section = document.querySelector('.js-section-catalog');
+  if (!section) return false;
   var handler = new _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_1__["Handlers"].Click({
     'catalog.open': function catalogOpen(_ref) {
       var event = _ref.event;
@@ -15200,6 +15201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function () {
   var section = document.querySelector('.js-section-slider');
+  if (!section) return false;
   var slider = section.querySelector('[data-rel="section.slider.carousel"]');
   var carousel = new _blocks_owl_carousel__WEBPACK_IMPORTED_MODULE_0__["OwlCarousel"]({
     node: slider,
