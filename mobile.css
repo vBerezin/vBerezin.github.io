@@ -856,6 +856,9 @@ img,
   position: relative;
   z-index: 100;
   min-height: 70px; }
+  .header__search, .header__nav, .header__overlay {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out; }
   .header__sticky {
     display: flex;
     flex-direction: column;
@@ -870,30 +873,27 @@ img,
     display: flex;
     align-items: center;
     justify-content: center; }
-  .header__bottom {
-    position: relative;
-    flex: 1 1 auto; }
   .header__overlay, .header__search, .header__menu, .header__catalog {
     display: none; }
   .header__overlay {
     background: rgba(0, 0, 0, 0.5);
-    animation: header-overlay 0.3s ease-out;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0; }
+    bottom: 0;
+    animation-name: header-overlay; }
   .header__search {
     position: relative;
     padding: 15px 0;
-    animation: header-search 0.3s ease-out; }
+    animation-name: header-search; }
   .header__nav {
     position: relative;
+    flex: 1 0 auto;
     max-width: 265px;
-    height: 100%;
     background: #fff;
     padding-right: 5px;
-    animation: header-nav 0.3s ease-out; }
+    animation-name: header-nav; }
     .header__nav::after {
       content: '';
       display: block;

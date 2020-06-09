@@ -19,6 +19,7 @@
       <div class="l-mobile__header">
         <header class="header js-header" id="header">
           <div class="header__sticky">
+            <div class="header__overlay" data-rel="header.overlay"></div>
             <div class="header__top">
                       <div class="l-container header__top-inner">
                                         <button class="icon-box header__toggle button-menu icon-box--white" data-rel="header.toggle">
@@ -32,26 +33,23 @@
                                 </a>
                       </div>
             </div>
-            <div class="header__bottom">
-              <div class="header__overlay" data-rel="header.overlay"></div>
-              <div class="header__search">
-                        <div class="l-container">
-                                  <form class="form-search" action="/search" data-rel="header.search">
-                                    <button class="form-search__submit" type="submit" data-rel="form.search.submit">
-                                              <svg class="icon--center icon icon-search">
-                                                <use xlink:href="#icon-search"></use>
-                                              </svg>
-                                    </button>
-                                    <input class="form-search__input" required type="search" name="search" minlength="3" placeholder="Поиск по сайту..." data-rel="form.search.input">
-                                  </form>
-                        </div>
-              </div>
-              <div class="header__nav header__menu">
-                        <nav class="menu-app js-menu-mobile" data-menu='[{"title":"О магазине","href":"#"},{"title":"Каталог мебели","href":"#","items":[{"title":"Кухня","image":{"src":"/images/menu/catalog-1.svg"}},{"title":"Мягкая мебель","image":{"src":"/images/menu/catalog-2.svg"}},{"title":"Гостиная","image":{"src":"/images/menu/catalog-3.svg"}},{"title":"Спальня","image":{"src":"/images/menu/catalog-4.svg"}}]},{"title":"Доставка и оплата","href":"#","active":true},{"title":"Гарантия","href":"#"},{"title":"Производители","href":"#"},{"title":"Отзывы","href":"#"},{"title":"Контакты","href":"#"}]'></nav>
-              </div>
-              <div class="header__nav header__catalog">
-                        <nav class="menu-app js-menu-mobile" data-menu='[{"title":"Кухня","image":{"src":"/images/menu/catalog-1.svg"}},{"title":"Мягкая мебель","image":{"src":"/images/menu/catalog-2.svg"}},{"title":"Гостиная","image":{"src":"/images/menu/catalog-3.svg"}},{"title":"Спальня","image":{"src":"/images/menu/catalog-4.svg"}}]'></nav>
-              </div>
+            <div class="header__search">
+                      <div class="l-container">
+                                <form class="form-search" action="/search" data-rel="header.search">
+                                  <button class="form-search__submit" type="submit" data-rel="form.search.submit">
+                                            <svg class="icon--center icon icon-search">
+                                              <use xlink:href="#icon-search"></use>
+                                            </svg>
+                                  </button>
+                                  <input class="form-search__input" required type="search" name="search" minlength="3" placeholder="Поиск по сайту..." data-rel="form.search.input">
+                                </form>
+                      </div>
+            </div>
+            <div class="header__nav header__menu">
+                      <nav class="menu-app js-menu-mobile" data-menu='[{"title":"О магазине","href":"#"},{"title":"Каталог мебели","href":"#","items":[{"title":"Кухня","image":{"src":"/images/menu/catalog-1.svg"}},{"title":"Мягкая мебель","image":{"src":"/images/menu/catalog-2.svg"}},{"title":"Гостиная","image":{"src":"/images/menu/catalog-3.svg"}},{"title":"Спальня","image":{"src":"/images/menu/catalog-4.svg"}}]},{"title":"Доставка и оплата","href":"#","active":true},{"title":"Гарантия","href":"#"},{"title":"Производители","href":"#"},{"title":"Отзывы","href":"#"},{"title":"Контакты","href":"#"}]'></nav>
+            </div>
+            <div class="header__nav header__catalog">
+                      <nav class="menu-app js-menu-mobile" data-menu='[{"title":"Кухня","image":{"src":"/images/menu/catalog-1.svg"}},{"title":"Мягкая мебель","image":{"src":"/images/menu/catalog-2.svg"}},{"title":"Гостиная","image":{"src":"/images/menu/catalog-3.svg"}},{"title":"Спальня","image":{"src":"/images/menu/catalog-4.svg"}}]'></nav>
             </div>
           </div>
         </header>
