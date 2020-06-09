@@ -152,7 +152,8 @@ strong {
   font-weight: 600; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline-color: #F78B3D; }
 
 a {
   color: #F78B3D; }
@@ -375,7 +376,6 @@ img,
   vertical-align: top;
   text-align: center;
   cursor: pointer;
-  outline: none;
   text-decoration: none;
   -webkit-user-select: none;
       -ms-user-select: none;
@@ -566,7 +566,8 @@ img,
     padding-top: 0; }
 
 .section-title {
-  font-size: 18px; }
+  font-size: 18px;
+  color: #000; }
   .section-title__icon {
     flex: 0 0 auto;
     font-size: 1.4em;
@@ -576,9 +577,9 @@ img,
     margin-right: 0.3em;
     position: relative;
     color: #122351; }
-  .section-title__text {
+  .section-title__title {
     font-size: 1em;
-    color: #000;
+    color: currentColor;
     flex: 1 1 auto;
     margin: 0; }
   .section-title.has-icon {
