@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Контактная информация</title>
+    <title>Корзина</title>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#3420A3">
     <meta name="msapplication-TileColor" content="#3420A3">
@@ -62,108 +62,155 @@
                               <svg class="icon icon-right breadcrumbs__icon">
                                 <use xlink:href="#icon-right"></use>
                               </svg>
-                      <span class="breadcrumbs__item">Контакты</span>
+                      <span class="breadcrumbs__item">Корзина</span>
                     </nav>
-                    <h1>Контактная информация</h1>
+                    <h1>Корзина</h1>
                   </div>
                   <div class="l-mobile__body">
-                    <div class="contacts">
-                      <div class="contacts__item">
-                        <div class="contacts__item__icon">
-                            <div class="icon-box">
-                                <svg class="icon--center icon icon-map icon-box__icon">
-                                  <use xlink:href="#icon-map"></use>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="contacts__item__body">
-                          <div class="contacts__item__title">Адрес:</div>
-                          <p>г. Москва, Федеративный проспект, д. 9, корп. 2, офис 1</p>
-                        </div>
+                    <form class="form-checkout" action="?checkout">
+                      <div class="form-checkout__head">
+                        <h2>Оформление заказа</h2>
                       </div>
-                      <div class="contacts__item">
-                        <div class="contacts__item__icon">
-                            <div class="icon-box">
-                                <svg class="icon--center icon icon-phone icon-box__icon">
-                                  <use xlink:href="#icon-phone"></use>
-                                </svg>
+                      <div class="form-checkout__body">
+                            <div class="form form-checkout__user form-user">
+                                <div class="form-head">
+                                    <div class="form-title">Представьтесь, пожалуйста
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="form-label">Ваше имя:
+                                    </label>
+                                  <input type="text" placeholder="Иван">
+                                </div>
+                                <div class="form-field">
+                                    <label class="form-label">Фамилия:
+                                    </label>
+                                  <input type="text" placeholder="Не обязательно">
+                                </div>
+                                <div class="form-field">
+                                    <label class="form-label">Телефон:
+                                    </label>
+                                  <input type="tel" placeholder="+7 (XXX) XXX-XX-XX" required>
+                                </div>
+                                <div class="form-field form-field--bottom">
+                                    <label class="form-label">Email:
+                                    </label>
+                                  <input type="email" placeholder="example@mail.ru">
+                                </div>
                             </div>
-                        </div>
-                        <div class="contacts__item__body">
-                          <div class="contacts__item__title">Телефоны:</div>
-                          <p>+7 (495) 796-30-35</p>
-                          <p>+7 (903) 796-30-35</p>
-                        </div>
-                      </div>
-                      <div class="contacts__item">
-                        <div class="contacts__item__icon">
-                            <div class="icon-box">
-                                <svg class="icon--center icon icon-clock icon-box__icon">
-                                  <use xlink:href="#icon-clock"></use>
-                                </svg>
+                            <div class="form form-checkout__payment form-payment">
+                                <div class="form-head">
+                                    <div class="form-title">Выберите метод оплаты
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="option">
+                                      <input type="radio" name="payment-type" value="payment-0">
+                                      <div class="option__btn"></div>
+                                      <div class="option__body">
+                                        <div class="option__title">Наличные курьеру</div>Оплата по факту доставки
+                                      </div>
+                                    </label>
+                                </div>
+                                <div class="form-field">
+                                    <label class="option">
+                                      <input type="radio" name="payment-type" value="payment-1">
+                                      <div class="option__btn"></div>
+                                      <div class="option__body">
+                                        <div class="option__title">Банковский перевод</div>Подробности у персонального менеджера по телефону
+                                      </div>
+                                    </label>
+                                </div>
+                                <div class="form-field">
+                                    <label class="option">
+                                      <input type="radio" name="payment-type" value="payment-2">
+                                      <div class="option__btn"></div>
+                                      <div class="option__body">
+                                        <div class="option__title">Внутренний счет</div>
+                                      </div>
+                                    </label>
+                                </div>
+                                <div class="form-field">
+                                    <label class="option">
+                                      <input type="radio" name="payment-type" value="payment-3">
+                                      <div class="option__btn"></div>
+                                      <div class="option__body">
+                                        <div class="option__title">Оформить покупку в кредит</div>После подтверждения заказа, с Вами свяжется специалист кредитной службы для оформления заявки на кредит. Кредитование осуществляется через Банки «Русский стандарт» и «Home Credit Bank»
+                                      </div>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contacts__item__body">
-                          <div class="contacts__item__title">Режим работы:</div>
-                          <p>Ежедневно</p>
-                          <p>с 09:00 до 20:00</p>
-                        </div>
-                      </div>
-                      <div class="contacts__item">
-                        <div class="contacts__item__icon">
-                            <div class="icon-box">
-                                <svg class="icon--center icon icon-mail icon-box__icon">
-                                  <use xlink:href="#icon-mail"></use>
-                                </svg>
+                            <div class="form form-checkout__delivery form-delivery">
+                                <div class="form-head">
+                                    <div class="form-title">Доставка
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="option">
+                                      <input type="radio" name="delivery-type" value="delivery-0">
+                                      <div class="option__btn"></div>
+                                      <div class="option__body">
+                                        <div class="option__title">Доставка за МКАД</div>
+                                      </div>
+                                    </label>
+                                </div>
+                                <div class="form-field">
+                                    <label class="option">
+                                      <input type="radio" name="delivery-type" value="delivery-1">
+                                      <div class="option__btn"></div>
+                                      <div class="option__body">
+                                        <div class="option__title">Доставка по Москве</div>В пределах МКАД
+                                      </div>
+                                    </label>
+                                </div>
+                                <div class="form-field">
+                                    <label class="form-label">Город:
+                                    </label>
+                                  <input type="text" required>
+                                </div>
+                                <div class="form-field">
+                                    <label class="form-label">Улица:
+                                    </label>
+                                  <input type="text" required>
+                                </div>
+                                <div class="form-field">
+                                    <label class="form-label">Дом:
+                                    </label>
+                                  <input type="text" required>
+                                </div>
+                                <div class="form-field">
+                                    <label class="form-label">Корпус:
+                                    </label>
+                                  <input type="text">
+                                </div>
+                                <div class="form-field">
+                                    <label class="form-label">Подъезд:
+                                    </label>
+                                  <input type="text">
+                                </div>
+                                <div class="form-field form-field--bottom">
+                                    <label class="form-label">Квартира
+                                    </label>
+                                  <input type="text" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contacts__item__body">
-                          <div class="contacts__item__title">Email:</div>
-                          <p><a href="mailto:mail@mebdv.ru">mail@mebdv.ru</a></p>
-                        </div>
-                      </div>
-                        <div class="map-box contacts__map">
-                            <iframe data-src="https://yandex.ru/map-widget/v1/-/CCQdRXVvcD"></iframe>
-                        </div>
-                      <div class="contacts__form">
-                              <form class="form form-feedback" action="?feedback">
-                                      <div class="form-head">
-                                              <div class="form-title">Обратная связь
-                                              </div>
-                                      </div>
-                                      <div class="form-field">
-                                              <label class="form-label">Ваше имя:
-                                              </label>
-                                        <input type="text" placeholder="Иван">
-                                      </div>
-                                      <div class="form-field">
-                                              <label class="form-label">Телефон:
-                                              </label>
-                                        <input type="tel" placeholder="+7 (XXX) XXX-XX-XX" required>
-                                      </div>
-                                      <div class="form-field">
-                                              <label class="form-label">Email:
-                                              </label>
-                                        <input type="email" placeholder="example@mail.ru">
-                                      </div>
-                                      <div class="form-field">
-                                              <label class="form-label">Сообщение:
-                                              </label>
-                                        <textarea placeholder="Сообщение"></textarea>
-                                      </div>
-                                      <div class="form-footer">
-                                              <button class="button button--block button--orange button--round" type="submit">Отправить
-                                              </button>
-                                      </div>
+                            <div class="form form-checkout__message form-message">
+                                <div class="form-head">
+                                    <div class="form-title">Добавить комментарий
+                                    </div>
+                                </div>
+                                <div class="form-field form-field--bottom">
+                                  <textarea placeholder="Напишите здесь все, что считаете нужным и что по вашему мнению поможет нам лучше выполнить ваш заказ"></textarea>
+                                </div>
+                            </div>
+                          <div class="cart-total form-checkout__total">
+                            <div class="cart-total__title">Стоимость Вашего заказа</div>
+                            <div class="cart-total__price">60 000 ₽</div>
+                              <button class="button cart-total__button button--block button--white button--round button--large" type="submit">Оформить заказ
                               </button>
+                          </div>
                       </div>
-                      <div class="contacts__info">
-                        <div class="contacts__info-title">Реквизиты</div>
-                        <p>ИП Лукьянов Р.К.</p>
-                        <p>ОГРНИП: 313334003700045</p>
-                        <p>ИНН: 332910397341</p>
-                      </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
       </main>
