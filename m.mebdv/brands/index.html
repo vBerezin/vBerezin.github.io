@@ -45,11 +45,8 @@
                                 </form>
                       </div>
             </div>
-            <div class="header__nav header__menu">
-                      <nav class="menu-app js-menu-mobile" data-menu='[{"title":"О магазине","href":"/m.mebdv/about"},{"title":"Каталог мебели","href":"/m.mebdv/catalog","items":[{"title":"Кухня","image":{"src":"/images/menu/catalog-1.svg"}},{"title":"Мягкая мебель","image":{"src":"/images/menu/catalog-2.svg"}},{"title":"Гостиная","image":{"src":"/images/menu/catalog-3.svg"}},{"title":"Спальня","image":{"src":"/images/menu/catalog-4.svg"}}]},{"title":"Доставка и оплата","href":"/m.mebdv/delivery","active":true},{"title":"Гарантия","href":"#"},{"title":"Производители","href":"/m.mebdv/brands"},{"title":"Отзывы","href":"/m.mebdv/reviews"},{"title":"Контакты","href":"/m.mebdv/contacts"}]'></nav>
-            </div>
-            <div class="header__nav header__catalog">
-                      <nav class="menu-app js-menu-mobile" data-menu='[{"title":"Кухня","image":{"src":"/images/menu/catalog-1.svg"}},{"title":"Мягкая мебель","image":{"src":"/images/menu/catalog-2.svg"}},{"title":"Гостиная","image":{"src":"/images/menu/catalog-3.svg"}},{"title":"Спальня","image":{"src":"/images/menu/catalog-4.svg"}}]'></nav>
+            <div class="header__menu">
+                            <nav class="menu-app js-menu-mobile" data-menu='[{"items":[{"title":"О магазине","href":"/m.mebdv/about"},{"title":"Каталог мебели","href":"/m.mebdv/catalog","items":[{"title":"Кухня","image":{"src":"/images/menu/catalog-1.svg"},"items":[{"title":"Кухня 1"}]},{"title":"Мягкая мебель","image":{"src":"/images/menu/catalog-2.svg"}},{"title":"Гостиная","image":{"src":"/images/menu/catalog-3.svg"}},{"title":"Спальня","image":{"src":"/images/menu/catalog-4.svg"}}]},{"title":"Доставка и оплата","href":"/m.mebdv/delivery","active":true},{"title":"Гарантия","href":"#"},{"title":"Производители","href":"/m.mebdv/brands"},{"title":"Отзывы","href":"/m.mebdv/reviews"},{"title":"Контакты","href":"/m.mebdv/contacts"}]}]'></nav>
             </div>
           </div>
         </header>
@@ -59,9 +56,9 @@
                   <div class="l-mobile__head">
                     <nav class="breadcrumbs">
                       <a class="breadcrumbs__item" href="/">Главная</a>
-                              <svg class="icon icon-right breadcrumbs__icon">
-                                <use xlink:href="#icon-right"></use>
-                              </svg>
+                                    <svg class="icon icon-right breadcrumbs__icon">
+                                      <use xlink:href="#icon-right"></use>
+                                    </svg>
                       <span class="breadcrumbs__item">Производители</span>
                     </nav>
                     <h1>Производители</h1>
@@ -175,7 +172,7 @@
         <nav class="menu-sticky js-menu-sticky">
           <div class="menu-sticky__sticky">
             <ul>
-              <li><a class="menu-sticky__item" href="/m.mebdv/catalog" data-click="catalog.open"><span class="menu-sticky__item__icon">
+              <li><a class="menu-sticky__item" href="/m.mebdv/catalog" data-click="menu.open" data-menu-state="[0,1]"><span class="menu-sticky__item__icon">
                             <svg class="icon icon-catalog">
                               <use xlink:href="#icon-catalog"></use>
                             </svg></span><span class="menu-sticky__item__name">Каталог</span></a></li>

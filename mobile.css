@@ -764,6 +764,7 @@ img,
   transition: bottom 0.3s ease-out, transform 0.3s ease-out 0.15s; }
 
 .menu-app {
+  color: #000;
   background: #fff; }
   .menu-app ul,
   .menu-app li {
@@ -772,6 +773,26 @@ img,
     margin: 0; }
   .menu-app li {
     border-bottom: 1px solid #F6F6F6; }
+  .menu-app__head, .menu-app__item {
+    font-size: 14px;
+    line-height: 30px;
+    padding: 10px 15px;
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+  .menu-app__head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 600;
+    border-bottom: 1px solid #F6F6F6;
+    cursor: pointer; }
+  .menu-app__head-icon {
+    flex: 0 0 1em;
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+    position: relative; }
   .menu-app__item {
     display: flex;
     align-items: center;
@@ -779,9 +800,6 @@ img,
     position: relative;
     text-decoration: none;
     color: #202020;
-    font-size: 14px;
-    line-height: 25px;
-    padding: 10px 15px;
     font-weight: 500; }
     .menu-app__item__icon, .menu-app__item__image {
       flex: 0 0 30px;
@@ -794,6 +812,8 @@ img,
       line-height: 0;
       text-align: center;
       margin-right: 10px; }
+      .menu-app__item__image img {
+        max-height: 30px; }
     .menu-app__item__title {
       flex: 1 1 auto; }
     .menu-app__item:active, .menu-app__item.is-active {
@@ -1278,7 +1298,7 @@ img,
   position: relative;
   z-index: 100;
   min-height: 70px; }
-  .header__search, .header__nav, .header__overlay {
+  .header__search, .header__menu, .header__overlay {
     animation-duration: 0.3s;
     animation-timing-function: ease-out; }
   .header__sticky {
@@ -1296,7 +1316,7 @@ img,
     display: flex;
     align-items: center;
     justify-content: center; }
-  .header__overlay, .header__search, .header__menu, .header__catalog {
+  .header__overlay, .header__search, .header__menu {
     display: none; }
   .header__overlay {
     background: rgba(0, 0, 0, 0.5);
@@ -1310,7 +1330,7 @@ img,
     position: relative;
     padding: 15px 0;
     animation-name: header-search; }
-  .header__nav {
+  .header__menu {
     position: relative;
     flex: 1 1 auto;
     overflow: auto;
@@ -1320,7 +1340,7 @@ img,
     background: #fff;
     padding-right: 5px;
     animation-name: header-nav; }
-    .header__nav::after {
+    .header__menu::after {
       content: '';
       display: block;
       position: absolute;
@@ -1338,17 +1358,15 @@ img,
     margin-right: 20px; }
   .header__phone {
     margin-left: 20px; }
-  .header.header--menu-active .header__overlay, .header.header--search-active .header__overlay, .header.header--catalog-active .header__overlay {
+  .header.header--menu-active .header__overlay, .header.header--search-active .header__overlay {
     display: block; }
-  .header.header--menu-active .header__sticky, .header.header--search-active .header__sticky, .header.header--catalog-active .header__sticky {
+  .header.header--menu-active .header__sticky, .header.header--search-active .header__sticky {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%; }
   .header.header--menu-active .header__menu {
-    display: block; }
-  .header.header--catalog-active .header__catalog {
     display: block; }
   .header.header--search-active .header__search {
     display: block; }
