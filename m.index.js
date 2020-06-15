@@ -14806,77 +14806,6 @@ var ColorPreview = function () {
 
 /***/ }),
 
-/***/ "./blocks-mobile/form-color/index.js":
-/*!*******************************************!*\
-  !*** ./blocks-mobile/form-color/index.js ***!
-  \*******************************************/
-/*! exports provided: FormColor */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormColor", function() { return FormColor; });
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldGet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldGet.js");
-/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldSet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldSet.js");
-/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _common_scripts_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~common/scripts/app */ "./common/scripts/app.js");
-
-
-
-
-
-var Form = function Form(node) {
-  var _this = this;
-
-  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Form);
-
-  _nodes.set(this, {
-    writable: true,
-    value: void 0
-  });
-
-  this.el = node;
-
-  _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2___default()(this, _nodes, {
-    base: {
-      title: this.el.querySelector('[data-rel="form.color.base.title"]'),
-      image: this.el.querySelector('[data-rel="form.color.base.image"]')
-    },
-    partner: {
-      title: this.el.querySelector('[data-rel="form.color.partner.title"]'),
-      image: this.el.querySelector('[data-rel="form.color.partner.image"]')
-    }
-  });
-
-  this.value = {
-    base: {
-      title: _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_1___default()(this, _nodes).base.title.innerText,
-      image: _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_1___default()(this, _nodes).base.image.src
-    },
-    partner: {
-      title: _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_1___default()(this, _nodes).partner.title.innerText,
-      image: _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_1___default()(this, _nodes).partner.image.src
-    }
-  };
-  this.el.addEventListener('submit', function (event) {
-    event.preventDefault();
-    _common_scripts_app__WEBPACK_IMPORTED_MODULE_3__["App"].stream.trigger('form.color.submit', _this.value);
-  });
-};
-
-var _nodes = new WeakMap();
-
-var FormColor = function () {
-  var node = document.querySelector('.js-form-color');
-  if (!node) return false;
-  return new Form(node);
-}();
-
-/***/ }),
-
 /***/ "./blocks-mobile/form-sizes/index.js":
 /*!*******************************************!*\
   !*** ./blocks-mobile/form-sizes/index.js ***!
@@ -15509,16 +15438,76 @@ var _active = new WeakMap();
 
 /***/ }),
 
-/***/ "./blocks/counter/index.js":
-/*!*********************************!*\
-  !*** ./blocks/counter/index.js ***!
-  \*********************************/
-/*! exports provided: Counter */
+/***/ "./blocks/color-item/index.js":
+/*!************************************!*\
+  !*** ./blocks/color-item/index.js ***!
+  \************************************/
+/*! exports provided: ColorItem */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Counter", function() { return Counter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColorItem", function() { return ColorItem; });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldSet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldSet.js");
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var ColorItem = /*#__PURE__*/function () {
+  function ColorItem(node) {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, ColorItem);
+
+    _active.set(this, {
+      writable: true,
+      value: void 0
+    });
+
+    _primary.set(this, {
+      writable: true,
+      value: void 0
+    });
+
+    this.el = node;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ColorItem, [{
+    key: "active",
+    set: function set(state) {
+      this.el.classList.toggle('is-active', state);
+
+      _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2___default()(this, _active, state);
+    }
+  }, {
+    key: "primary",
+    set: function set(state) {
+      this.el.classList.toggle('color-item--orange', state);
+
+      _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_2___default()(this, _primary, state);
+    }
+  }]);
+
+  return ColorItem;
+}();
+
+var _active = new WeakMap();
+
+var _primary = new WeakMap();
+
+/***/ }),
+
+/***/ "./blocks/counter/index.js":
+/*!*********************************!*\
+  !*** ./blocks/counter/index.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js");
@@ -15527,6 +15516,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldSet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldSet.js");
 /* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -15608,6 +15598,195 @@ var Counter = /*#__PURE__*/function () {
 }();
 
 var _val = new WeakMap();
+
+(function () {
+  var nodes = document.querySelectorAll('.js-counter');
+  if (!nodes || !nodes.length) return false;
+  nodes.forEach(function (node) {
+    return new Counter(node);
+  });
+})();
+
+/***/ }),
+
+/***/ "./blocks/form-color/index.js":
+/*!************************************!*\
+  !*** ./blocks/form-color/index.js ***!
+  \************************************/
+/*! exports provided: FormColor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormColor", function() { return FormColor; });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldGet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldGet.js");
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldSet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldSet.js");
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _common_scripts_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~common/scripts/app */ "./common/scripts/app.js");
+
+
+
+
+
+
+var Form = /*#__PURE__*/function () {
+  function Form(node) {
+    var _this = this;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Form);
+
+    _nodes.set(this, {
+      writable: true,
+      value: void 0
+    });
+
+    this.el = node;
+
+    _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default()(this, _nodes, {
+      base: {
+        title: this.el.querySelector('[data-rel="form.color.base.title"]'),
+        image: this.el.querySelector('[data-rel="form.color.base.image"]')
+      },
+      partner: {
+        title: this.el.querySelector('[data-rel="form.color.partner.title"]'),
+        image: this.el.querySelector('[data-rel="form.color.partner.image"]')
+      }
+    });
+
+    this.value = {
+      base: {
+        title: _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _nodes).base.title.innerText,
+        image: _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _nodes).base.image.src
+      },
+      partner: {
+        title: _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _nodes).partner.title.innerText,
+        image: _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _nodes).partner.image.src
+      }
+    };
+    this.el.addEventListener('submit', function (event) {
+      event.preventDefault();
+      _common_scripts_app__WEBPACK_IMPORTED_MODULE_4__["App"].stream.trigger('form.color.submit', _this.value);
+    });
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Form, [{
+    key: "base",
+    set: function set(value) {
+      var image = value.image,
+          title = value.title;
+      _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _nodes).base.title.innerHTML = title;
+      _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _nodes).base.image.src = image;
+      this.value.base.title = title;
+      this.value.base.image = image;
+    }
+  }, {
+    key: "partner",
+    set: function set(value) {
+      var image = value.image,
+          title = value.title;
+      _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _nodes).partner.title.innerHTML = title;
+      _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _nodes).partner.image.src = image;
+      this.value.partner.title = title;
+      this.value.partner.image = image;
+    }
+  }]);
+
+  return Form;
+}();
+
+var _nodes = new WeakMap();
+
+var FormColor = function () {
+  var node = document.querySelector('.js-form-color');
+  if (!node) return false;
+  var form = new Form(node);
+  _common_scripts_app__WEBPACK_IMPORTED_MODULE_4__["App"].stream.on('color.preview.select.base', function (data) {
+    form.base = data;
+  });
+  _common_scripts_app__WEBPACK_IMPORTED_MODULE_4__["App"].stream.on('color.preview.select.partner', function (data) {
+    form.partner = data;
+  });
+}();
+
+/***/ }),
+
+/***/ "./blocks/form-colors/index.js":
+/*!*************************************!*\
+  !*** ./blocks/form-colors/index.js ***!
+  \*************************************/
+/*! exports provided: FormColors */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormColors", function() { return FormColors; });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~common/scripts/utils/handlers */ "./common/scripts/utils/handlers.js");
+/* harmony import */ var _common_scripts_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~common/scripts/app */ "./common/scripts/app.js");
+/* harmony import */ var _blocks_color_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~blocks/color-item */ "./blocks/color-item/index.js");
+/* harmony import */ var _blocks_mobile_color_preview__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~blocks-mobile/color-preview */ "./blocks-mobile/color-preview/index.js");
+
+
+
+
+ // TODO: ajax search
+
+var Form = function Form(node) {
+  var _this = this;
+
+  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Form);
+
+  this.el = node;
+  this.selected = null;
+  this.el.addEventListener('click', new _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_1__["Handlers"].Click({
+    'form.colors.option': function formColorsOption(_ref) {
+      var event = _ref.event,
+          target = _ref.target;
+      var _target$dataset = target.dataset,
+          image = _target$dataset.image,
+          title = _target$dataset.title;
+      _blocks_mobile_color_preview__WEBPACK_IMPORTED_MODULE_4__["ColorPreview"].image = image;
+      _blocks_mobile_color_preview__WEBPACK_IMPORTED_MODULE_4__["ColorPreview"].title = title;
+      _blocks_mobile_color_preview__WEBPACK_IMPORTED_MODULE_4__["ColorPreview"].open();
+      _this.selected = new _blocks_color_item__WEBPACK_IMPORTED_MODULE_3__["ColorItem"](target);
+    }
+  }));
+  var base = this.el.querySelector('[data-rel="form.colors.base"]');
+  var partner = this.el.querySelector('[data-rel="form.colors.partner"]');
+  this.base = base ? new _blocks_color_item__WEBPACK_IMPORTED_MODULE_3__["ColorItem"](base) : null;
+  this.partner = base ? new _blocks_color_item__WEBPACK_IMPORTED_MODULE_3__["ColorItem"](partner) : null;
+};
+
+var FormColors = function () {
+  var node = document.querySelector('.js-form-colors');
+  if (!node) return false;
+  var form = new Form(node);
+  _common_scripts_app__WEBPACK_IMPORTED_MODULE_2__["App"].stream.on('color.preview.select.base', function () {
+    if (form.base) {
+      form.base.active = false;
+    }
+
+    form.selected.active = true;
+    form.selected.primary = true;
+    form.base = form.selected;
+  });
+  _common_scripts_app__WEBPACK_IMPORTED_MODULE_2__["App"].stream.on('color.preview.select.partner', function () {
+    if (form.partner) {
+      form.partner.active = false;
+    }
+
+    form.selected.active = true;
+    form.selected.primary = false;
+    form.partner = form.selected;
+  });
+  return form;
+}();
 
 /***/ }),
 
@@ -16266,15 +16445,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************!*\
   !*** ./blocks/select-color/index.js ***!
   \**************************************/
-/*! exports provided: SelectColor */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectColor", function() { return SelectColor; });
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~common/scripts/utils/handlers */ "./common/scripts/utils/handlers.js");
+
 
 
 var SelectColor = function SelectColor(node) {
@@ -16285,8 +16464,7 @@ var SelectColor = function SelectColor(node) {
   this.el = node;
   this.el.addEventListener('click', new _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_1__["Handlers"].Click({
     'select.color.toggle': function selectColorToggle(_ref) {
-      var event = _ref.event,
-          target = _ref.target;
+      var event = _ref.event;
 
       _this.el.classList.toggle('is-active');
 
@@ -16294,6 +16472,14 @@ var SelectColor = function SelectColor(node) {
     }
   }));
 };
+
+(function () {
+  var nodes = document.querySelectorAll('.js-select-color');
+  if (!nodes || !nodes.length) return false;
+  return Array.from(nodes).forEach(function (node) {
+    return new SelectColor(node);
+  });
+})();
 
 /***/ }),
 
@@ -16344,34 +16530,90 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************!*\
   !*** ./blocks/spoiler/index.js ***!
   \*********************************/
-/*! exports provided: Spoiler */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Spoiler", function() { return Spoiler; });
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~common/scripts/utils/handlers */ "./common/scripts/utils/handlers.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldGet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldGet.js");
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldSet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldSet.js");
+/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~common/scripts/utils/handlers */ "./common/scripts/utils/handlers.js");
 
 
-var Spoiler = function Spoiler(node) {
-  var _this = this;
 
-  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Spoiler);
 
-  this.el = node;
-  this.el.addEventListener('click', new _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_1__["Handlers"].Click({
-    'spoiler.toggle': function spoilerToggle(_ref) {
-      var event = _ref.event,
-          target = _ref.target;
 
-      _this.el.classList.toggle('is-active');
 
-      event.preventDefault();
+var Spoiler = /*#__PURE__*/function () {
+  function Spoiler(node) {
+    var _this = this;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Spoiler);
+
+    _active.set(this, {
+      writable: true,
+      value: void 0
+    });
+
+    this.el = node;
+
+    _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default()(this, _active, this.el.classList.contains('is-active'));
+
+    this.active = _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _active);
+    this.el.addEventListener('click', new _common_scripts_utils_handlers__WEBPACK_IMPORTED_MODULE_4__["Handlers"].Click({
+      'spoiler.toggle': function spoilerToggle(_ref) {
+        var event = _ref.event;
+        event.preventDefault();
+        return _this.toggle();
+      }
+    }));
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Spoiler, [{
+    key: "open",
+    value: function open() {
+      this.active = true;
     }
-  }));
-};
+  }, {
+    key: "close",
+    value: function close() {
+      this.active = false;
+    }
+  }, {
+    key: "toggle",
+    value: function toggle() {
+      this.active = !this.active;
+    }
+  }, {
+    key: "active",
+    set: function set(state) {
+      this.el.classList.toggle('is-active', state);
+
+      _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default()(this, _active, state);
+    },
+    get: function get() {
+      return _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _active);
+    }
+  }]);
+
+  return Spoiler;
+}();
+
+var _active = new WeakMap();
+
+(function () {
+  var nodes = document.querySelectorAll('.js-spoiler');
+  if (!nodes || !nodes.length) return false;
+  nodes.forEach(function (node) {
+    return new Spoiler(node);
+  });
+})();
 
 /***/ }),
 
@@ -16420,28 +16662,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 Object(_common_scripts_utils_document_ready__WEBPACK_IMPORTED_MODULE_1__["documentReady"])(_common_scripts_lazy_loader__WEBPACK_IMPORTED_MODULE_0__["LazyLoader"].init);
-
-/***/ }),
-
-/***/ "./common/scripts/counters.js":
-/*!************************************!*\
-  !*** ./common/scripts/counters.js ***!
-  \************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_counter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~blocks/counter */ "./blocks/counter/index.js");
-
-
-(function () {
-  var nodes = document.querySelectorAll('.js-counter');
-  if (!nodes || !nodes.length) return false;
-  nodes.forEach(function (node) {
-    return new _blocks_counter__WEBPACK_IMPORTED_MODULE_0__["Counter"](node);
-  });
-})();
 
 /***/ }),
 
@@ -16494,28 +16714,6 @@ var LazyLoader = {
 
 /***/ }),
 
-/***/ "./common/scripts/mobile.js":
-/*!**********************************!*\
-  !*** ./common/scripts/mobile.js ***!
-  \**********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_select_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~blocks/select-color */ "./blocks/select-color/index.js");
-
-
-(function () {
-  var nodes = document.querySelectorAll('.js-select-color');
-  if (!nodes || !nodes.length) return false;
-  return Array.from(nodes).forEach(function (node) {
-    return new _blocks_select_color__WEBPACK_IMPORTED_MODULE_0__["SelectColor"](node);
-  });
-})();
-
-/***/ }),
-
 /***/ "./common/scripts/popups.js":
 /*!**********************************!*\
   !*** ./common/scripts/popups.js ***!
@@ -16560,28 +16758,6 @@ document.addEventListener('click', new _common_scripts_utils_handlers__WEBPACK_I
 var Popups = {
   popups: popups
 };
-
-/***/ }),
-
-/***/ "./common/scripts/spoilers.js":
-/*!************************************!*\
-  !*** ./common/scripts/spoilers.js ***!
-  \************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_spoiler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~blocks/spoiler */ "./blocks/spoiler/index.js");
-
-
-(function () {
-  var nodes = document.querySelectorAll('.js-spoiler');
-  if (!nodes || !nodes.length) return false;
-  nodes.forEach(function (node) {
-    return new _blocks_spoiler__WEBPACK_IMPORTED_MODULE_0__["Spoiler"](node);
-  });
-})();
 
 /***/ }),
 
@@ -16727,23 +16903,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _m_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./m.index.scss */ "./m.index.scss");
 /* harmony import */ var _m_index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_m_index_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _common_scripts_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~common/scripts/common */ "./common/scripts/common.js");
-/* harmony import */ var _common_scripts_mobile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~common/scripts/mobile */ "./common/scripts/mobile.js");
-/* harmony import */ var _common_scripts_counters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~common/scripts/counters */ "./common/scripts/counters.js");
-/* harmony import */ var _common_scripts_spoilers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~common/scripts/spoilers */ "./common/scripts/spoilers.js");
-/* harmony import */ var _common_scripts_popups__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~common/scripts/popups */ "./common/scripts/popups.js");
-/* harmony import */ var _blocks_slider_main__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~blocks/slider-main */ "./blocks/slider-main/index.js");
-/* harmony import */ var _blocks_slider_products__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ~blocks/slider-products */ "./blocks/slider-products/index.js");
-/* harmony import */ var _blocks_slider_products__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_blocks_slider_products__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _blocks_product_gallery__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ~blocks/product-gallery */ "./blocks/product-gallery/index.js");
-/* harmony import */ var _blocks_form_product__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ~blocks/form-product */ "./blocks/form-product/index.js");
-/* harmony import */ var _blocks_mobile_header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ~blocks-mobile/header */ "./blocks-mobile/header/index.js");
-/* harmony import */ var _blocks_mobile_menu_sticky__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ~blocks-mobile/menu-sticky */ "./blocks-mobile/menu-sticky/index.js");
-/* harmony import */ var _blocks_mobile_section_catalog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ~blocks-mobile/section-catalog */ "./blocks-mobile/section-catalog/index.js");
-/* harmony import */ var _blocks_mobile_color_preview__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ~blocks-mobile/color-preview */ "./blocks-mobile/color-preview/index.js");
-/* harmony import */ var _blocks_mobile_form_sizes__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ~blocks-mobile/form-sizes */ "./blocks-mobile/form-sizes/index.js");
-/* harmony import */ var _blocks_mobile_form_color__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ~blocks-mobile/form-color */ "./blocks-mobile/form-color/index.js");
+/* harmony import */ var _common_scripts_popups__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~common/scripts/popups */ "./common/scripts/popups.js");
+/* harmony import */ var _blocks_slider_main__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~blocks/slider-main */ "./blocks/slider-main/index.js");
+/* harmony import */ var _blocks_slider_products__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~blocks/slider-products */ "./blocks/slider-products/index.js");
+/* harmony import */ var _blocks_slider_products__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_blocks_slider_products__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _blocks_product_gallery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~blocks/product-gallery */ "./blocks/product-gallery/index.js");
+/* harmony import */ var _blocks_form_product__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~blocks/form-product */ "./blocks/form-product/index.js");
+/* harmony import */ var _blocks_spoiler__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ~blocks/spoiler */ "./blocks/spoiler/index.js");
+/* harmony import */ var _blocks_counter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ~blocks/counter */ "./blocks/counter/index.js");
+/* harmony import */ var _blocks_select_color__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ~blocks/select-color */ "./blocks/select-color/index.js");
+/* harmony import */ var _blocks_form_color__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ~blocks/form-color */ "./blocks/form-color/index.js");
+/* harmony import */ var _blocks_form_colors__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ~blocks/form-colors */ "./blocks/form-colors/index.js");
+/* harmony import */ var _blocks_mobile_header__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ~blocks-mobile/header */ "./blocks-mobile/header/index.js");
+/* harmony import */ var _blocks_mobile_menu_sticky__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ~blocks-mobile/menu-sticky */ "./blocks-mobile/menu-sticky/index.js");
+/* harmony import */ var _blocks_mobile_section_catalog__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ~blocks-mobile/section-catalog */ "./blocks-mobile/section-catalog/index.js");
+/* harmony import */ var _blocks_mobile_color_preview__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ~blocks-mobile/color-preview */ "./blocks-mobile/color-preview/index.js");
+/* harmony import */ var _blocks_mobile_form_sizes__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ~blocks-mobile/form-sizes */ "./blocks-mobile/form-sizes/index.js");
 // styles
  // scripts
+
 
 
 

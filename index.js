@@ -512,108 +512,6 @@ var _refresh2 = function _refresh2() {
 
 /***/ }),
 
-/***/ "./blocks/counter/index.js":
-/*!*********************************!*\
-  !*** ./blocks/counter/index.js ***!
-  \*********************************/
-/*! exports provided: Counter */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Counter", function() { return Counter; });
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldGet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldGet.js");
-/* harmony import */ var _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/classPrivateFieldSet */ "../node_modules/@babel/runtime/helpers/classPrivateFieldSet.js");
-/* harmony import */ var _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-var Counter = /*#__PURE__*/function () {
-  function Counter(node) {
-    var _this = this;
-
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Counter);
-
-    _val.set(this, {
-      writable: true,
-      value: void 0
-    });
-
-    this.el = node;
-    this.buttons = {
-      plus: this.el.querySelector('[data-rel="counter.plus"]'),
-      minus: this.el.querySelector('[data-rel="counter.minus"]')
-    };
-    this.input = this.el.querySelector('[data-rel="counter.input"]');
-    this.step = +this.input.step || 1;
-    this.min = +this.input.min || 1;
-    this.max = +this.input.max || Infinity;
-    this.value = +this.input.value;
-    this.input.addEventListener('keyup', function () {
-      _this.value = _this.input.value;
-    });
-    this.buttons.plus.addEventListener('click', function (event) {
-      _this.plus();
-
-      event.preventDefault();
-    });
-    this.buttons.minus.addEventListener('click', function (event) {
-      _this.minus();
-
-      event.preventDefault();
-    });
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Counter, [{
-    key: "plus",
-    value: function plus() {
-      this.value = _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _val) + this.step;
-    }
-  }, {
-    key: "minus",
-    value: function minus() {
-      this.value = _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _val) - this.step;
-    }
-  }, {
-    key: "validate",
-    value: function validate(value) {
-      var val = this.filter(value);
-      this.buttons.plus.disabled = val > this.max - this.step;
-      this.buttons.minus.disabled = val < this.min + this.step;
-      if (val > this.max) return this.max;
-      if (val < this.min) return this.min;
-      return val;
-    }
-  }, {
-    key: "filter",
-    value: function filter(value) {
-      return +value.toString().replace(/\D/, '');
-    }
-  }, {
-    key: "value",
-    set: function set(value) {
-      _babel_runtime_helpers_classPrivateFieldSet__WEBPACK_IMPORTED_MODULE_3___default()(this, _val, this.validate(value));
-
-      this.input.value = _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _val);
-    },
-    get: function get() {
-      return _babel_runtime_helpers_classPrivateFieldGet__WEBPACK_IMPORTED_MODULE_2___default()(this, _val);
-    }
-  }]);
-
-  return Counter;
-}();
-
-var _val = new WeakMap();
-
-/***/ }),
-
 /***/ "./blocks/lazy-iframe/index.js":
 /*!*************************************!*\
   !*** ./blocks/lazy-iframe/index.js ***!
@@ -821,39 +719,6 @@ Object(_common_scripts_utils_document_ready__WEBPACK_IMPORTED_MODULE_1__["docume
 
 /***/ }),
 
-/***/ "./common/scripts/counters.js":
-/*!************************************!*\
-  !*** ./common/scripts/counters.js ***!
-  \************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_counter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~blocks/counter */ "./blocks/counter/index.js");
-
-
-(function () {
-  var nodes = document.querySelectorAll('.js-counter');
-  if (!nodes || !nodes.length) return false;
-  nodes.forEach(function (node) {
-    return new _blocks_counter__WEBPACK_IMPORTED_MODULE_0__["Counter"](node);
-  });
-})();
-
-/***/ }),
-
-/***/ "./common/scripts/desktop.js":
-/*!***********************************!*\
-  !*** ./common/scripts/desktop.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ "./common/scripts/lazy-loader.js":
 /*!***************************************!*\
   !*** ./common/scripts/lazy-loader.js ***!
@@ -1012,13 +877,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ "./index.scss");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _common_scripts_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~common/scripts/common */ "./common/scripts/common.js");
-/* harmony import */ var _common_scripts_desktop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~common/scripts/desktop */ "./common/scripts/desktop.js");
-/* harmony import */ var _common_scripts_desktop__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_common_scripts_desktop__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _common_scripts_counters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~common/scripts/counters */ "./common/scripts/counters.js");
 // styles
  // scripts
-
-
 
 
 
