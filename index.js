@@ -90,11 +90,11 @@ function(e){var t,n,r,o,i,a,s,u,l,c,f,d,p,h,g,m,v,y,b,x="sizzle"+1*new Date,w=e.
 /*!*******************************!*\
   !*** ./common/scripts/app.js ***!
   \*******************************/
-/*! exports provided: App */function(e,t,n){"use strict";n.r(t),function(e,r){n.d(t,"App",(function(){return c}));var o,i,a,s=n(/*! ~common/styles/breakpoints.scss */"./common/styles/breakpoints.scss"),u=n(/*! ~blocks/breakpoints */"./blocks/breakpoints/index.js"),l=n(/*! ~common/scripts/utils/stream */"./common/scripts/utils/stream.js"),c=(o=console.info,i=new u.Breakpoints(s),a=document.documentElement.getAttribute("lang"),{breakpoints:i,lang:a?a.toLowerCase():null,stream:new l.Stream,debug:o});e.App=c,e.$=r}.call(this,n(/*! ./../../../node_modules/webpack/buildin/global.js */"../node_modules/webpack/buildin/global.js"),n(/*! jquery */"../node_modules/jquery/dist/jquery.js"))},"./common/scripts/common.js":
+/*! exports provided: App */function(e,t,n){"use strict";n.r(t),n.d(t,"App",(function(){return l}));var r,o,i,a=n(/*! ~common/styles/breakpoints.scss */"./common/styles/breakpoints.scss"),s=n(/*! ~blocks/breakpoints */"./blocks/breakpoints/index.js"),u=n(/*! ~common/scripts/utils/stream */"./common/scripts/utils/stream.js"),l=(r=console.info,o=new s.Breakpoints(a),i=document.documentElement.getAttribute("lang"),{breakpoints:o,lang:i?i.toLowerCase():null,stream:new u.Stream,debug:r})},"./common/scripts/common.js":
 /*!**********************************!*\
   !*** ./common/scripts/common.js ***!
   \**********************************/
-/*! no exports provided */function(e,t,n){"use strict";n.r(t);var r=n(/*! ~common/scripts/lazy-loader */"./common/scripts/lazy-loader.js"),o=n(/*! ~common/scripts/utils/document-ready */"./common/scripts/utils/document-ready.js");Object(o.documentReady)(r.LazyLoader.init)},"./common/scripts/lazy-loader.js":
+/*! no exports provided */function(e,t,n){"use strict";n.r(t),function(e,t){var r=n(/*! ~common/scripts/app */"./common/scripts/app.js"),o=n(/*! ~common/scripts/lazy-loader */"./common/scripts/lazy-loader.js"),i=n(/*! ~common/scripts/utils/document-ready */"./common/scripts/utils/document-ready.js");Object(i.documentReady)(o.LazyLoader.init),t.$=e,t.App=r.App}.call(this,n(/*! jquery */"../node_modules/jquery/dist/jquery.js"),n(/*! ./../../../node_modules/webpack/buildin/global.js */"../node_modules/webpack/buildin/global.js"))},"./common/scripts/lazy-loader.js":
 /*!***************************************!*\
   !*** ./common/scripts/lazy-loader.js ***!
   \***************************************/
