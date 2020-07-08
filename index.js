@@ -321,7 +321,11 @@ function(e){var t,n,i,s,r,o,a,l,u,c,h,d,p,f,m,g,v,y,b,_="sizzle"+1*new Date,w=e.
 /*!*********************************!*\
   !*** ./desktop/header/index.js ***!
   \*********************************/
-/*! exports provided: Header */function(e,t,n){"use strict";n.r(t),n.d(t,"Header",(function(){return o}));var i,s,r=n(/*! ./scripts/header-sticky */"./desktop/header/scripts/header-sticky.js"),o=(i=document.querySelector(".js-header"),(s=new r.HeaderSticky(i)).active=!0,{sticky:s})},"./desktop/header/scripts/header-sticky.js":
+/*! exports provided: Header */function(e,t,n){"use strict";n.r(t),n.d(t,"Header",(function(){return r}));var i=n(/*! ./scripts/header-sticky */"./desktop/header/scripts/header-sticky.js"),s=n(/*! ./scripts/header-blurred */"./desktop/header/scripts/header-blurred.js"),r=function(){var e=document.querySelector(".js-header"),t=new i.HeaderSticky(e);new s.HeaderBlurred(e);return t.active=!0,{sticky:t}}()},"./desktop/header/scripts/header-blurred.js":
+/*!**************************************************!*\
+  !*** ./desktop/header/scripts/header-blurred.js ***!
+  \**************************************************/
+/*! exports provided: HeaderBlurred */function(e,t,n){"use strict";n.r(t),n.d(t,"HeaderBlurred",(function(){return u}));var i=n(/*! @babel/runtime/helpers/classCallCheck */"../node_modules/@babel/runtime/helpers/classCallCheck.js"),s=n.n(i),r=n(/*! @babel/runtime/helpers/createClass */"../node_modules/@babel/runtime/helpers/createClass.js"),o=n.n(r),a=n(/*! @babel/runtime/helpers/classPrivateFieldSet */"../node_modules/@babel/runtime/helpers/classPrivateFieldSet.js"),l=n.n(a),u=function(){function e(t){s()(this,e),c.set(this,{writable:!0,value:void 0}),this.el=t,this.active=window.CSS.supports("\n      (backdrop-filter:blur())\n      or\n      (-webkit-backdrop-filter:blur())\n    ")}return o()(e,[{key:"active",set:function(e){this.el.classList.toggle("header--blurred",e),l()(this,c,e)}}]),e}(),c=new WeakMap},"./desktop/header/scripts/header-sticky.js":
 /*!*************************************************!*\
   !*** ./desktop/header/scripts/header-sticky.js ***!
   \*************************************************/
