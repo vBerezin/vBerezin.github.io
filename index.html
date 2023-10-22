@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<link rel="stylesheet" href="./jquery-ui-1.13.2.custom/jquery-ui.min.css">
+		<link rel="stylesheet" href="./css/index.css">
+	</head>
+	<body>
+		<div style="max-width:350px;">
+			<div class="form-calc">
+				<div class="form-calc__head">
+					<div class="form-calc__title">Рассчет стоимости двигателя</div>Заполните характеристики
+				</div>
+				<div class="form_calc__body">
+					<div class="form-calc__row">
+									<div class="field">
+										<label class="field__label">Мощность</label>
+													<div class="input">
+														<input type="text" placeholder="Ач" pattern="[0-9]*">
+													</div>
+									</div>
+									<div class="field">
+										<label class="field__label">Обороты</label>
+													<div class="input">
+														<input type="text" placeholder="Об/мин" disabled>
+													</div>
+									</div>
+					</div>
+					<div class="form-calc__row">
+									<div class="field">
+										<label class="field__label">Комплектации</label>
+													<div class="dropdown js-dropdown">
+														<select class="dropdown__select">
+															<option value="">Не выбрано</option>
+															<option value="АДЧР 0">АДЧР 0</option>
+															<option value="АДЧР В">АДЧР В</option>
+															<option value="АДЧР ДВ">АДЧР ДВ</option>
+															<option value="АДЧР Т">АДЧР Т</option>
+															<option value="АДЧР ТВ">АДЧР ТВ</option>
+															<option value="АДЧР ТДВ">АДЧР ТДВ</option>
+														</select>
+														<div class="dropdown__head">
+															<div class="dropdown__placeholder">Не выбрано</div>
+															<div class="dropdown__value"></div>
+														</div>
+														<div class="dropdown__body">
+															<div class="dropdown__options">
+																<div class="dropdown__option" data-value="АДЧР 0">АДЧР 0</div>
+																<div class="dropdown__option" data-value="АДЧР В">АДЧР В</div>
+																<div class="dropdown__option" data-value="АДЧР ДВ">АДЧР ДВ</div>
+																<div class="dropdown__option" data-value="АДЧР Т">АДЧР Т</div>
+																<div class="dropdown__option" data-value="АДЧР ТВ">АДЧР ТВ</div>
+																<div class="dropdown__option" data-value="АДЧР ТДВ">АДЧР ТДВ</div>
+															</div>
+														</div>
+													</div>
+									</div>
+									<div class="field">
+										<label class="field__label">Степень защиты</label>
+													<div class="dropdown js-dropdown">
+														<select class="dropdown__select" disabled>
+															<option value="">Не выбрано</option>
+															<option value="IP54" selected>IP54</option>
+															<option value="IP55">IP55</option>
+															<option value="IP56">IP56</option>
+															<option value="IP65">IP65</option>
+														</select>
+														<div class="dropdown__head">
+															<div class="dropdown__placeholder">Не выбрано</div>
+															<div class="dropdown__value"></div>
+														</div>
+														<div class="dropdown__body">
+															<div class="dropdown__options">
+																<div class="dropdown__option" data-value="IP54">IP54</div>
+																<div class="dropdown__option" data-value="IP55">IP55</div>
+																<div class="dropdown__option" data-value="IP56">IP56</div>
+																<div class="dropdown__option" data-value="IP65">IP65</div>
+															</div>
+														</div>
+													</div>
+									</div>
+					</div>
+											<div class="field form-calc__range js-form-calc-range">
+												<label class="field__label">Регулировка оборотов</label>
+															<div class="range form-calc__range-slider" data-max="6 000" data-min="1"></div>
+												<div class="form-calc__row">
+													<div class="form-calc__range-field">
+																	<div class="input">
+																		<label class="input__label">от</label>
+																		<input class="form-calc__range-from" type="text" value="1 Гц" data-units="Гц">
+																	</div>
+													</div>
+													<div class="form-calc__range-field">
+																	<div class="input">
+																		<label class="input__label">до</label>
+																		<input class="form-calc__range-to" type="text" value="6 000 Гц" data-units="Гц">
+																	</div>
+													</div>
+												</div>
+											</div>
+					<div class="form-calc__row">
+									<div class="field">
+										<label class="field__label">Монтажное исполнение</label>
+													<div class="dropdown js-dropdown dropdown--2cols">
+														<select class="dropdown__select">
+															<option value="">Не выбрано</option>
+															<option value="IM1001">IM1001</option>
+															<option value="IM1081">IM1081</option>
+															<option value="IM1011">IM1011</option>
+															<option value="IM1031">IM1031</option>
+															<option value="IM2001">IM2001</option>
+															<option value="IM2081">IM2081</option>
+															<option value="IM2011">IM2011</option>
+															<option value="IM2031">IM2031</option>
+															<option value="IM3001">IM3001</option>
+															<option value="IM3081">IM3081</option>
+															<option value="IM3011">IM3011</option>
+															<option value="IM3031">IM3031</option>
+															<option value="IM3601">IM3601</option>
+															<option value="IM3611">IM3611</option>
+															<option value="IM3681">IM3681</option>
+															<option value="IM3631">IM3631</option>
+														</select>
+														<div class="dropdown__head">
+															<div class="dropdown__placeholder">Не выбрано</div>
+															<div class="dropdown__value"></div>
+														</div>
+														<div class="dropdown__body">
+															<div class="dropdown__options">
+																<div class="dropdown__option" data-value="IM1001">IM1001</div>
+																<div class="dropdown__option" data-value="IM1081">IM1081</div>
+																<div class="dropdown__option" data-value="IM1011">IM1011</div>
+																<div class="dropdown__option" data-value="IM1031">IM1031</div>
+																<div class="dropdown__option" data-value="IM2001">IM2001</div>
+																<div class="dropdown__option" data-value="IM2081">IM2081</div>
+																<div class="dropdown__option" data-value="IM2011">IM2011</div>
+																<div class="dropdown__option" data-value="IM2031">IM2031</div>
+																<div class="dropdown__option" data-value="IM3001">IM3001</div>
+																<div class="dropdown__option" data-value="IM3081">IM3081</div>
+																<div class="dropdown__option" data-value="IM3011">IM3011</div>
+																<div class="dropdown__option" data-value="IM3031">IM3031</div>
+																<div class="dropdown__option" data-value="IM3601">IM3601</div>
+																<div class="dropdown__option" data-value="IM3611">IM3611</div>
+																<div class="dropdown__option" data-value="IM3681">IM3681</div>
+																<div class="dropdown__option" data-value="IM3631">IM3631</div>
+															</div>
+														</div>
+													</div>
+									</div>
+									<div class="field">
+										<label class="field__label">Климатическое исполнение</label>
+													<div class="dropdown js-dropdown dropdown--2cols">
+														<select class="dropdown__select">
+															<option value="">Не выбрано</option>
+															<option value="IM1001">IM1001</option>
+															<option value="IM1081">IM1081</option>
+															<option value="IM1011">IM1011</option>
+															<option value="IM1031">IM1031</option>
+															<option value="IM2001">IM2001</option>
+															<option value="IM2081">IM2081</option>
+															<option value="IM2011">IM2011</option>
+															<option value="IM2031">IM2031</option>
+															<option value="IM3001">IM3001</option>
+															<option value="IM3081">IM3081</option>
+															<option value="IM3011">IM3011</option>
+															<option value="IM3031">IM3031</option>
+															<option value="IM3601">IM3601</option>
+															<option value="IM3611">IM3611</option>
+															<option value="IM3681">IM3681</option>
+															<option value="IM3631">IM3631</option>
+														</select>
+														<div class="dropdown__head">
+															<div class="dropdown__placeholder">Не выбрано</div>
+															<div class="dropdown__value"></div>
+														</div>
+														<div class="dropdown__body">
+															<div class="dropdown__options">
+																<div class="dropdown__option" data-value="IM1001">IM1001</div>
+																<div class="dropdown__option" data-value="IM1081">IM1081</div>
+																<div class="dropdown__option" data-value="IM1011">IM1011</div>
+																<div class="dropdown__option" data-value="IM1031">IM1031</div>
+																<div class="dropdown__option" data-value="IM2001">IM2001</div>
+																<div class="dropdown__option" data-value="IM2081">IM2081</div>
+																<div class="dropdown__option" data-value="IM2011">IM2011</div>
+																<div class="dropdown__option" data-value="IM2031">IM2031</div>
+																<div class="dropdown__option" data-value="IM3001">IM3001</div>
+																<div class="dropdown__option" data-value="IM3081">IM3081</div>
+																<div class="dropdown__option" data-value="IM3011">IM3011</div>
+																<div class="dropdown__option" data-value="IM3031">IM3031</div>
+																<div class="dropdown__option" data-value="IM3601">IM3601</div>
+																<div class="dropdown__option" data-value="IM3611">IM3611</div>
+																<div class="dropdown__option" data-value="IM3681">IM3681</div>
+																<div class="dropdown__option" data-value="IM3631">IM3631</div>
+															</div>
+														</div>
+													</div>
+									</div>
+					</div>
+					<div class="form-calc__row">
+									<div class="field">
+										<label class="field__label">Датчики температуры</label>
+										<div class="form-calc__radio-group">
+														<label class="radio">
+															<input type="radio" name="radio-group-1" value="1"><span class="radio__label">Да</span>
+														</label>
+														<label class="radio">
+															<input type="radio" name="radio-group-1" value="2"><span class="radio__label">Нет</span>
+														</label>
+										</div>
+									</div>
+									<div class="field">
+										<label class="field__label">Роликовый подшипник в переднем подшипниковом щите</label>
+										<div class="form-calc__radio-group">
+														<label class="radio">
+															<input type="radio" name="radio-group-2" value="1" disabled><span class="radio__label">Да</span>
+														</label>
+														<label class="radio">
+															<input type="radio" name="radio-group-2" value="2" checked disabled><span class="radio__label">Нет</span>
+														</label>
+										</div>
+									</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./jquery-ui-1.13.2.custom/external/jquery/jquery.js"></script>
+		<script src="./jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+		<script src="./js/index.js"></script>
+	</body>
+</html>
